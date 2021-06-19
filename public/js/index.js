@@ -1950,7 +1950,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/esm/react-router.js");
-/* harmony import */ var _pages_Home__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./pages/Home */ "./resources/js/pages/Home.js");
+/* harmony import */ var _pages_Home__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./pages/Home */ "./resources/js/pages/Home.jsx");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
 
@@ -2045,6 +2045,53 @@ function Body(props) {
 
 /***/ }),
 
+/***/ "./resources/js/components/Navbar/Account/Account.jsx":
+/*!************************************************************!*\
+  !*** ./resources/js/components/Navbar/Account/Account.jsx ***!
+  \************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _Account_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Account.css */ "./resources/js/components/Navbar/Account/Account.css");
+/* harmony import */ var _images_AccountIcon_png__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../images/AccountIcon.png */ "./resources/images/AccountIcon.png");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+
+
+function Account(props) {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+    className: "account_wrapper",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("img", {
+      src: _images_AccountIcon_png__WEBPACK_IMPORTED_MODULE_2__.default,
+      className: "account_image",
+      alt: "Image"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+      className: "element",
+      style: {
+        width: "10px",
+        height: "50px"
+      },
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
+        children: "aa"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
+        children: "aa"
+      })]
+    })]
+  });
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Account);
+
+/***/ }),
+
 /***/ "./resources/js/components/Navbar/Cart/Cart.js":
 /*!*****************************************************!*\
   !*** ./resources/js/components/Navbar/Cart/Cart.js ***!
@@ -2058,19 +2105,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var _Cart_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Cart.css */ "./resources/js/components/Navbar/Cart/Cart.css");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _images_CartIcon_png__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../images/CartIcon.png */ "./resources/images/CartIcon.png");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
 
 
 
 
 function Cart(props) {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-    "class": "cart_wrapper",
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
-      src: "#",
-      "class": "img-responsive",
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+    className: "cart_wrapper",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("img", {
+      src: _images_CartIcon_png__WEBPACK_IMPORTED_MODULE_2__.default,
+      className: "cart_image",
       alt: "Image"
-    })
+    }), " \xA0 cart"]
   });
 }
 
@@ -2078,10 +2128,10 @@ function Cart(props) {
 
 /***/ }),
 
-/***/ "./resources/js/components/Navbar/Navbar.js":
-/*!**************************************************!*\
-  !*** ./resources/js/components/Navbar/Navbar.js ***!
-  \**************************************************/
+/***/ "./resources/js/components/Navbar/Navbar.jsx":
+/*!***************************************************!*\
+  !*** ./resources/js/components/Navbar/Navbar.jsx ***!
+  \***************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -2090,9 +2140,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var _Cart_Cart__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Cart/Cart */ "./resources/js/components/Navbar/Cart/Cart.js");
-/* harmony import */ var _Navbar_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Navbar.css */ "./resources/js/components/Navbar/Navbar.css");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _Account_Account__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Account/Account */ "./resources/js/components/Navbar/Account/Account.jsx");
+/* harmony import */ var _Cart_Cart__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Cart/Cart */ "./resources/js/components/Navbar/Cart/Cart.js");
+/* harmony import */ var _Navbar_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Navbar.css */ "./resources/js/components/Navbar/Navbar.css");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
 
 
 
@@ -2100,24 +2152,16 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function Navbar(props) {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("nav", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("nav", {
     className: "navbar_wrapper",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("form", {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("form", {
       className: "element",
       style: {
         width: "720px",
         height: "100px",
         backgroundColor: "blue"
       }
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-      className: "element",
-      style: {
-        width: "180px",
-        height: "100px",
-        backgroundColor: "white"
-      },
-      children: "aaa"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_Cart_Cart__WEBPACK_IMPORTED_MODULE_1__.default, {})]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_Account_Account__WEBPACK_IMPORTED_MODULE_1__.default, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_Cart_Cart__WEBPACK_IMPORTED_MODULE_2__.default, {})]
   });
 }
 
@@ -2159,10 +2203,10 @@ if (document.getElementById("root")) {
 
 /***/ }),
 
-/***/ "./resources/js/pages/Home.js":
-/*!************************************!*\
-  !*** ./resources/js/pages/Home.js ***!
-  \************************************/
+/***/ "./resources/js/pages/Home.jsx":
+/*!*************************************!*\
+  !*** ./resources/js/pages/Home.jsx ***!
+  \*************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -2173,7 +2217,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _components_Navbar_Navbar__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/Navbar/Navbar */ "./resources/js/components/Navbar/Navbar.js");
+/* harmony import */ var _components_Navbar_Navbar__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/Navbar/Navbar */ "./resources/js/components/Navbar/Navbar.jsx");
 /* harmony import */ var _components_Body_Body__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/Body/Body */ "./resources/js/components/Body/Body.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
@@ -6635,6 +6679,30 @@ function Home(props) {
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/components/Navbar/Account/Account.css":
+/*!**********************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/components/Navbar/Account/Account.css ***!
+  \**********************************************************************************************************************************************************************************************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
+// Imports
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, ".account_wrapper{\r\n    width: 180px;\r\n    height: 100px;\r\n    /* background-color: white; */\r\n\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n}\r\n\r\n.account_image{\r\n    width: 32px;\r\n    height: 32px;\r\n}", ""]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/components/Navbar/Cart/Cart.css":
 /*!****************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/components/Navbar/Cart/Cart.css ***!
@@ -6652,7 +6720,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".cart_wrapper {\r\n    width: 100px;\r\n    height: 100px;\r\n    background-color: red;\r\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".cart_wrapper {\r\n    width: 100px;\r\n    height: 100px;\r\n    /* background-color: red; */\r\n\r\n    display: flex;\r\n    justify-content: flex-start;\r\n    align-items: center;\r\n\r\n    color: white;\r\n    font-size: 14px;\r\n    font-weight: bold;\r\n}\r\n\r\n.cart_image{\r\n    width: 32px;\r\n    height: 32px;\r\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -6756,6 +6824,36 @@ module.exports = function (cssWithMappingToString) {
 
   return list;
 };
+
+/***/ }),
+
+/***/ "./resources/images/AccountIcon.png":
+/*!******************************************!*\
+  !*** ./resources/images/AccountIcon.png ***!
+  \******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("/images/AccountIcon.png?409ad3894d27b26597dded8c81dba782");
+
+/***/ }),
+
+/***/ "./resources/images/CartIcon.png":
+/*!***************************************!*\
+  !*** ./resources/images/CartIcon.png ***!
+  \***************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("/images/CartIcon.png?dc28159cd08e28d09424832d04dc6354");
 
 /***/ }),
 
@@ -72705,6 +72803,36 @@ if (false) {} else {
   module.exports = __webpack_require__(/*! ./cjs/scheduler-tracing.development.js */ "./node_modules/scheduler/cjs/scheduler-tracing.development.js");
 }
 
+
+/***/ }),
+
+/***/ "./resources/js/components/Navbar/Account/Account.css":
+/*!************************************************************!*\
+  !*** ./resources/js/components/Navbar/Account/Account.css ***!
+  \************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_Account_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!../../../../../node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./Account.css */ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/components/Navbar/Account/Account.css");
+
+            
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_Account_css__WEBPACK_IMPORTED_MODULE_1__.default, options);
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_Account_css__WEBPACK_IMPORTED_MODULE_1__.default.locals || {});
 
 /***/ }),
 

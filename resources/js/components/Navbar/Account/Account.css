@@ -1,0 +1,14 @@
+.account_wrapper{
+    width: 180px;
+    height: 100px;
+    /* background-color: white; */
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.account_image{
+    width: 32px;
+    height: 32px;
+}
