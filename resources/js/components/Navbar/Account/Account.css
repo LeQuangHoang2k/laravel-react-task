@@ -1,4 +1,4 @@
-.account_wrapper{
+.account_wrapper {
     width: 180px;
     height: 100px;
     /* background-color: white; */
@@ -10,9 +10,11 @@
     color: white;
     font-weight: bold;
     font-size: 14px;
+
+    cursor: pointer;
 }
 
-.account_image{
+.account_image {
     width: 32px;
     height: 32px;
 }

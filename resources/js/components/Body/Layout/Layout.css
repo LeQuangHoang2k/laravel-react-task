@@ -1,7 +1,9 @@
 .layout_wrapper {
     width: 1250px;
     min-height: 700px;
-    background-color: white;
+    background-color: #f4f4f4;
 
     margin: auto;
+
+    position: relative;
 }

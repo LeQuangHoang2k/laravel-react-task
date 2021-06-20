@@ -10,6 +10,8 @@
     color: white;
     font-size: 14px;
     font-weight: bold;
+
+    cursor: pointer;
 }
 
 .cart_image{

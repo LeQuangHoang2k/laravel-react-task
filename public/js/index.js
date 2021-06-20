@@ -2097,26 +2097,40 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function Product(props) {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-      className: "product_item",
-      children: "item1"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-      className: "product_item",
-      children: "item1"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-      className: "product_item",
-      children: "item1"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-      className: "product_item",
-      children: "item1"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-      className: "product_item",
-      children: "item1"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-      className: "product_item",
-      children: "item1"
-    })]
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+    children: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15].map(function (item) {
+      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("a", {
+        href: "abc",
+        className: "product_wrapper",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+          className: "product_content",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
+            src: "https://salt.tikicdn.com/cache/280x280/ts/product/9a/2e/ef/b1ca821448463399a638394f9bc8a8b3.jpg",
+            "class": "product_image",
+            alt: "Image"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+            className: "product_title",
+            children: "Tai Nghe Bluetooth True Wireless Samsung Galaxy Buds + Plus - H\xE0ng ch\xEDnh h\xE3ng"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+              className: "product_star",
+              children: "\u0110\xE1nh gi\xE1 : 5 sao |"
+            }), " ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+              className: "product_sold",
+              children: "\u0110\xE3 b\xE1n : 50"
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+              className: "product_price",
+              children: "1.390.000 \u0111"
+            }), "\xA0", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+              className: "product_discount",
+              children: "-69%"
+            })]
+          })]
+        })
+      });
+    })
   });
 }
 
@@ -6799,7 +6813,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".body_wrapper {\r\n    width: 100%;\r\n    height: 800px;\r\n    background-color: #f4f4f4;\r\n\r\n    padding-top: 15px;\r\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".body_wrapper {\r\n    width: 100%;\r\n    height: 1200px;\r\n    background-color: #f4f4f4;\r\n\r\n    padding-top: 15px;\r\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -6823,7 +6837,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".layout_wrapper {\r\n    width: 1250px;\r\n    min-height: 700px;\r\n    background-color: white;\r\n\r\n    margin: auto;\r\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".layout_wrapper {\r\n    width: 1250px;\r\n    min-height: 700px;\r\n    background-color: #f4f4f4;\r\n\r\n    margin: auto;\r\n\r\n    position: relative;\r\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -6847,7 +6861,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".product_item {\r\n    width: 250px;\r\n    height: 330px;\r\n    background-color: blue;\r\n\r\n    float: left;\r\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".product_wrapper {\r\n    width: 250px;\r\n    height: 330px;\r\n    background-color: white;\r\n\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n\r\n    position: relative;\r\n    padding: 12px 16px;\r\n    float: left;\r\n}\r\n\r\n.product_wrapper:hover {\r\n    z-index: 1;\r\n    box-shadow: silver 0 0 20px 10px;\r\n\r\n    text-decoration: none;\r\n}\r\n\r\n.product_content {\r\n    width: 100%;\r\n    height: 100%;\r\n    /* background-color: gray; */\r\n\r\n    position: relative;\r\n    padding-left: 12px;\r\n    padding-right: 12px;\r\n}\r\n\r\n.product_image {\r\n    width: 100%;\r\n    height: 200px;\r\n\r\n    margin-bottom: 12px;\r\n}\r\n\r\n.product_title {\r\n    width: 100%;\r\n\r\n    white-space: nowrap;\r\n    display: inline-block;\r\n    overflow: hidden;\r\n    text-overflow: ellipsis;\r\n\r\n    color: black;\r\n\r\n    -webkit-line-clamp: 2;\r\n    display: -webkit-box;\r\n    -webkit-box-orient: vertical;\r\n    white-space: normal;\r\n}\r\n\r\n.product_star {\r\n    width: 100%;\r\n    height: 14px;\r\n\r\n    color: #dab927;\r\n    font-size: 14px;\r\n}\r\n\r\n.product_sold {\r\n    color: rgb(120, 120, 120);\r\n    font-size: 14px;\r\n}\r\n\r\n.product_price {\r\n    color: black;\r\n    font-weight: bold;\r\n}\r\n\r\n.product_discount {\r\n    width: 32px;\r\n    height: 20px;\r\n    background-color: #ff424e;\r\n\r\n    color: white;\r\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -6871,7 +6885,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".account_wrapper{\r\n    width: 180px;\r\n    height: 100px;\r\n    /* background-color: white; */\r\n\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n\r\n    color: white;\r\n    font-weight: bold;\r\n    font-size: 14px;\r\n}\r\n\r\n.account_image{\r\n    width: 32px;\r\n    height: 32px;\r\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".account_wrapper {\r\n    width: 180px;\r\n    height: 100px;\r\n    /* background-color: white; */\r\n\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n\r\n    color: white;\r\n    font-weight: bold;\r\n    font-size: 14px;\r\n\r\n    cursor: pointer;\r\n}\r\n\r\n.account_image {\r\n    width: 32px;\r\n    height: 32px;\r\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -6895,7 +6909,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".cart_wrapper {\r\n    width: 100px;\r\n    height: 100px;\r\n    /* background-color: red; */\r\n\r\n    display: flex;\r\n    justify-content: flex-start;\r\n    align-items: center;\r\n\r\n    color: white;\r\n    font-size: 14px;\r\n    font-weight: bold;\r\n}\r\n\r\n.cart_image{\r\n    width: 32px;\r\n    height: 32px;\r\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".cart_wrapper {\r\n    width: 100px;\r\n    height: 100px;\r\n    /* background-color: red; */\r\n\r\n    display: flex;\r\n    justify-content: flex-start;\r\n    align-items: center;\r\n\r\n    color: white;\r\n    font-size: 14px;\r\n    font-weight: bold;\r\n\r\n    cursor: pointer;\r\n}\r\n\r\n.cart_image{\r\n    width: 32px;\r\n    height: 32px;\r\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
