@@ -8,10 +8,7 @@ function Account(props) {
     return (
         <div className="account_wrapper">
             <img src={AccountIcon} className="account_image" alt="Image" />
-            <div className="element" style={{width:"10px",height:"50px"}}>
-                <p>aa</p>
-                <p>aa</p>
-            </div>
+            &nbsp; Account
         </div>
     );
 }

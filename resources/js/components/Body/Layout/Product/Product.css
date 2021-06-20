@@ -1,0 +1,7 @@
+.product_item {
+    width: 250px;
+    height: 330px;
+    background-color: blue;
+
+    float: left;
+}
