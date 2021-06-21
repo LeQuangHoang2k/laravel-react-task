@@ -11,7 +11,8 @@
 .account_dropdown {
     width: 270px;
     height: 280px;
-    background-color: black;
+    background-color: white;
+    box-shadow: rgb(0 0 0 / 18%) 0px 6px 12px 0px;
 
     position: absolute;
     top: 80px;
@@ -19,17 +20,17 @@
     z-index: 9;
 }
 
-.account_dropdown::after {
+.account_dropdown::before {
     content: "";
 
     width: 20px;
     height: 20px;
-    background-color: red;
+    background-color: white;
 
     position: absolute;
     margin-top: -10px;
-    margin-left: 50%;
-    transform: translateX(-50%);
+    margin-left: 47%;
+    /* transform: translateX(-50%); */
     z-index: 10;
 
     transform: rotate(45deg);
