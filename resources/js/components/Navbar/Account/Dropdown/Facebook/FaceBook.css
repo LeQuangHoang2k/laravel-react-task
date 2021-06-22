@@ -1,0 +1,15 @@
+.account_facebook {
+    width: 235px;
+    height: 40px;
+    background-color: rgb(59, 89, 152);
+    border: none;
+    border-radius: 4px;
+
+    position: absolute;
+    top: 120px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+
+    color: white;
+}

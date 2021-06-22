@@ -7,11 +7,11 @@ function Product(props) {
         <div>
             {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15].map((item) => {
                 return (
-                    <a href="abc" className="product_wrapper">
+                    <a key={item} href="abc" className="product_wrapper">
                         <div className="product_content">
                             <img
                                 src="https://salt.tikicdn.com/cache/280x280/ts/product/9a/2e/ef/b1ca821448463399a638394f9bc8a8b3.jpg"
-                                class="product_image"
+                                className="product_image"
                                 alt="Image"
                             />
 
