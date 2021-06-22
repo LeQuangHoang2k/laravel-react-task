@@ -2153,7 +2153,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Dropdown_Dropdown__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Dropdown/Dropdown */ "./resources/js/components/Navbar/Account/Dropdown/Dropdown.jsx");
 /* harmony import */ var _Account_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Account.css */ "./resources/js/components/Navbar/Account/Account.css");
 /* harmony import */ var _images_AccountIcon_png__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../images/AccountIcon.png */ "./resources/images/AccountIcon.png");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _images_AccountArrow_png__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../../images/AccountArrow.png */ "./resources/images/AccountArrow.png");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
 
 
 
@@ -2162,18 +2164,25 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function Account(props) {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
     className: "account_wrapper",
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
       className: "account_content",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("img", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("img", {
         src: _images_AccountIcon_png__WEBPACK_IMPORTED_MODULE_3__.default,
         className: "account_image",
         alt: "Image"
-      }), "\xA0", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
         className: "account_name",
-        children: "Account"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_Dropdown_Dropdown__WEBPACK_IMPORTED_MODULE_1__.default, {})]
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
+          className: "account_title",
+          children: "L\xEA Quang Ho\xE0ng"
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("img", {
+        src: _images_AccountArrow_png__WEBPACK_IMPORTED_MODULE_4__.default,
+        className: "account_arrow",
+        alt: "Image"
+      })]
     })
   });
 }
@@ -2399,7 +2408,10 @@ function Cart(props) {
       src: _images_CartIcon_png__WEBPACK_IMPORTED_MODULE_2__.default,
       className: "cart_image",
       alt: "Image"
-    }), " \xA0 cart"]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+      className: "cart_title",
+      children: "Cart"
+    })]
   });
 }
 
@@ -7082,7 +7094,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".account_wrapper {\r\n    width: 180px;\r\n    height: 100px;\r\n    /* background-color: white; */\r\n\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n\r\n    color: white;\r\n    font-weight: bold;\r\n    font-size: 14px;\r\n\r\n}\r\n\r\n.account_image {\r\n    width: 32px;\r\n    height: 32px;\r\n    \r\n    position: relative;\r\n\r\n    cursor: pointer;\r\n}\r\n\r\n.account_name {\r\n    position: relative;\r\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".account_wrapper {\r\n    width: 180px;\r\n    height: 100px;\r\n    /* background-color: white; */\r\n\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n\r\n    color: white;\r\n    font-weight: bold;\r\n    font-size: 14px;\r\n}\r\n\r\n.account_content {\r\n    display: flex;\r\n\r\n    cursor: pointer;\r\n}\r\n\r\n.account_image {\r\n    width: 32px;\r\n    height: 32px;\r\n\r\n    position: relative;\r\n\r\n    /* display: block; */\r\n\r\n    cursor: pointer;\r\n}\r\n\r\n.account_name {\r\n    min-width: 50px;\r\n    max-width: 100px;\r\n    height: 36px;\r\n    /* background-color: red; */\r\n\r\n    position: relative;\r\n    margin-left: 5px;\r\n\r\n    display: flex;\r\n    justify-content: center;\r\n    /* align-items: flex-end; */\r\n\r\n    font-size: 13px;\r\n}\r\n\r\n.account_title {\r\n    align-self: flex-end;\r\n\r\n    white-space: nowrap;\r\n    overflow: hidden;\r\n    text-overflow: ellipsis;\r\n}\r\n\r\n.account_arrow {\r\n    width: 16px;\r\n    height: 16px;\r\n\r\n    align-self: flex-end;\r\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -7106,7 +7118,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "/* .account_content:hover + .account_dropdown {\r\n    width: 270px;\r\n    height: 280px;\r\n    background-color: white;\r\n\r\n    position: absolute;\r\n    top: 80px;\r\n    z-index: 10;\r\n} */\r\n\r\n.account_dropdown {\r\n    width: 270px;\r\n    height: 280px;\r\n    background-color: white;\r\n    box-shadow: rgb(0 0 0 / 18%) 0px 6px 12px 0px;\r\n\r\n    position: absolute;\r\n    top: 80px;\r\n    margin-left: -90px;\r\n    z-index: 9;\r\n}\r\n\r\n.account_dropdown::before {\r\n    content: \"\";\r\n\r\n    width: 20px;\r\n    height: 20px;\r\n    background-color: white;\r\n\r\n    position: absolute;\r\n    margin-top: -10px;\r\n    margin-left: 47%;\r\n    /* transform: translateX(-50%); */\r\n    z-index: 10;\r\n\r\n    transform: rotate(45deg);\r\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".account_name:hover + .account_dropdown {\r\n    display: block;\r\n}\r\n\r\n.account_dropdown {\r\n    width: 270px;\r\n    /* height: 280px; */\r\n    height: 230px;\r\n    background-color: white;\r\n    box-shadow: rgb(0 0 0 / 18%) 0px 6px 12px 0px;\r\n\r\n    display: none;\r\n\r\n    position: absolute;\r\n    top: 80px;\r\n    margin-left: -75px;\r\n    z-index: 9;\r\n\r\n    -webkit-animation-name: example;\r\n\r\n            animation-name: example;\r\n    -webkit-animation-duration: 0.9s;\r\n            animation-duration: 0.9s;\r\n}\r\n\r\n.account_dropdown::before {\r\n    content: \"\";\r\n\r\n    width: 20px;\r\n    height: 20px;\r\n    background-color: white;\r\n\r\n    position: absolute;\r\n    margin-top: -10px;\r\n    margin-left: 47%;\r\n    /* transform: translateX(-50%); */\r\n    z-index: 10;\r\n\r\n    transform: rotate(45deg);\r\n}\r\n\r\n.account_dropdown::after  {\r\n    content: \"\";\r\n\r\n    width: 200px;\r\n    height: 50px;\r\n    background-color: black;\r\n\r\n    position: absolute;\r\n    margin-top: -30px;\r\n    margin-left: 47%;\r\n    z-index: 10;\r\n\r\n}\r\n\r\n\r\n@-webkit-keyframes example {\r\n    0% {\r\n        width: 0px;\r\n        height: 0px;\r\n    }\r\n    100% {\r\n        width: 270px;\r\n        height: 230px;\r\n    }\r\n}\r\n\r\n\r\n@keyframes example {\r\n    0% {\r\n        width: 0px;\r\n        height: 0px;\r\n    }\r\n    100% {\r\n        width: 270px;\r\n        height: 230px;\r\n    }\r\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -7130,7 +7142,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".account_facebook {\r\n    width: 235px;\r\n    height: 40px;\r\n    background-color: rgb(59, 89, 152);\r\n    border: none;\r\n    border-radius: 4px;\r\n\r\n    position: absolute;\r\n    top: 120px;\r\n    left: 50%;\r\n    transform: translateX(-50%);\r\n    z-index: 10;\r\n\r\n    color: white;\r\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".account_facebook {\r\n    width: 235px;\r\n    height: 40px;\r\n    background-color: rgb(59, 89, 152);\r\n    border: none;\r\n    border-radius: 4px;\r\n\r\n    position: absolute;\r\n    top: 120px;\r\n    left: 50%;\r\n    transform: translateX(-50%);\r\n    z-index: 10;\r\n\r\n    color: white;\r\n    font-weight: bold;\r\n\r\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -7154,7 +7166,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".account_google {\r\n    width: 235px;\r\n    height: 40px;\r\n    background-color: rgb(223, 74, 50);\r\n    border: none;\r\n    border-radius: 4px;\r\n\r\n    position: absolute;\r\n    top: 170px;\r\n    left: 50%;\r\n    transform: translateX(-50%);\r\n    z-index: 10;\r\n\r\n    color: white;\r\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".account_google {\r\n    width: 235px;\r\n    height: 40px;\r\n    background-color: rgb(223, 74, 50);\r\n    border: none;\r\n    border-radius: 4px;\r\n\r\n    position: absolute;\r\n    top: 170px;\r\n    left: 50%;\r\n    transform: translateX(-50%);\r\n    z-index: 10;\r\n\r\n    color: white;\r\n    font-weight: bold;\r\n\r\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -7178,7 +7190,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".account_login {\r\n    width: 235px;\r\n    height: 40px;\r\n    background-color: #fdd835;\r\n    border: none;\r\n    border-radius: 4px;\r\n\r\n    position: absolute;\r\n    top: 20px;\r\n    left: 50%;\r\n    transform: translateX(-50%);\r\n    z-index: 10;\r\n\r\n    color: #4a4a4a;\r\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".account_login {\r\n    width: 235px;\r\n    height: 40px;\r\n    background-color: #fdd835;\r\n    border: none;\r\n    border-radius: 4px;\r\n\r\n    position: absolute;\r\n    top: 20px;\r\n    left: 50%;\r\n    transform: translateX(-50%);\r\n    z-index: 10;\r\n\r\n    color: #4a4a4a;\r\n    font-weight: bold;\r\n\r\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -7202,7 +7214,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".account_register {\r\n    width: 235px;\r\n    height: 40px;\r\n    background-color: #fdd835;\r\n    border: none;\r\n    border-radius: 4px;\r\n\r\n    position: absolute;\r\n    top: 70px;\r\n    left: 50%;\r\n    transform: translateX(-50%);\r\n    z-index: 10;\r\n\r\n    color: #4a4a4a;\r\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".account_register {\r\n    width: 235px;\r\n    height: 40px;\r\n    background-color: #fdd835;\r\n    border: none;\r\n    border-radius: 4px;\r\n\r\n    position: absolute;\r\n    top: 70px;\r\n    left: 50%;\r\n    transform: translateX(-50%);\r\n    z-index: 10;\r\n\r\n    color: #4a4a4a;\r\n    font-weight: bold;\r\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -7226,7 +7238,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".cart_wrapper {\r\n    width: 100px;\r\n    height: 100px;\r\n    /* background-color: red; */\r\n\r\n    display: flex;\r\n    justify-content: flex-start;\r\n    align-items: center;\r\n\r\n    color: white;\r\n    font-size: 14px;\r\n    font-weight: bold;\r\n\r\n    cursor: pointer;\r\n}\r\n\r\n.cart_image{\r\n    width: 32px;\r\n    height: 32px;\r\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".cart_wrapper {\r\n    width: 100px;\r\n    height: 100px;\r\n    /* background-color: red; */\r\n\r\n    display: flex;\r\n    justify-content: flex-start;\r\n    align-items: center;\r\n\r\n    color: white;\r\n    font-size: 14px;\r\n    font-weight: bold;\r\n\r\n    cursor: pointer;\r\n}\r\n\r\n.cart_image {\r\n    width: 32px;\r\n    height: 32px;\r\n}\r\n\r\n.cart_title {\r\n    width: 32px;\r\n    height: 40px;\r\n\r\n    position: relative;\r\n    margin-left: 5px;\r\n\r\n    display: flex;\r\n    justify-content: flex-start;\r\n    align-items: flex-end;\r\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -7354,6 +7366,21 @@ module.exports = function (cssWithMappingToString) {
 
   return list;
 };
+
+/***/ }),
+
+/***/ "./resources/images/AccountArrow.png":
+/*!*******************************************!*\
+  !*** ./resources/images/AccountArrow.png ***!
+  \*******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("/images/AccountArrow.png?c0e71e71a4fc732af60309c5dc780672");
 
 /***/ }),
 

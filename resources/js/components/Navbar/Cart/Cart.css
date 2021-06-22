@@ -14,7 +14,19 @@
     cursor: pointer;
 }
 
-.cart_image{
+.cart_image {
     width: 32px;
     height: 32px;
+}
+
+.cart_title {
+    width: 32px;
+    height: 40px;
+
+    position: relative;
+    margin-left: 5px;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
 }

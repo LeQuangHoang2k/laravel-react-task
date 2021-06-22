@@ -10,18 +10,52 @@
     color: white;
     font-weight: bold;
     font-size: 14px;
+}
 
+.account_content {
+    display: flex;
+
+    cursor: pointer;
 }
 
 .account_image {
     width: 32px;
     height: 32px;
-    
+
     position: relative;
+
+    /* display: block; */
 
     cursor: pointer;
 }
 
 .account_name {
+    min-width: 50px;
+    max-width: 100px;
+    height: 36px;
+    /* background-color: red; */
+
     position: relative;
+    margin-left: 5px;
+
+    display: flex;
+    justify-content: center;
+    /* align-items: flex-end; */
+
+    font-size: 13px;
+}
+
+.account_title {
+    align-self: flex-end;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.account_arrow {
+    width: 16px;
+    height: 16px;
+
+    align-self: flex-end;
 }
