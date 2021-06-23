@@ -14,4 +14,19 @@
     color: #4a4a4a;
     font-weight: bold;
 
+    transform-origin: 0 0;
+
+    animation-name: account_login;
+    animation-duration: 0.3s;
+}
+
+@keyframes account_login {
+    0% {
+        width: 0;
+        height: 0;
+    }
+    100% {
+        width: 235px;
+        height: 40px;
+    }
 }

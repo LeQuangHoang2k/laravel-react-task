@@ -13,7 +13,28 @@
 }
 
 .account_content {
+    width: 160px;
+    height: 40px;
+    /* background-color: red; */
+
+    position: relative;
+
     display: flex;
+
+    cursor: pointer;
+}
+
+.account_content::after {
+    content: "";
+
+    width: 160px;
+    height: 10px;
+    /* background-color: green; */
+
+    position: relative;
+    margin-top: 40px;
+
+    z-index: 8;
 
     cursor: pointer;
 }
@@ -25,22 +46,25 @@
     position: relative;
 
     /* display: block; */
+    /* align-self: flex-end; */
+    margin-top: 4px;
 
     cursor: pointer;
 }
 
 .account_name {
-    min-width: 50px;
+    /* min-width: 50px; */
     max-width: 100px;
     height: 36px;
     /* background-color: red; */
 
     position: relative;
+    margin-top: 3px;
     margin-left: 5px;
 
     display: flex;
     justify-content: center;
-    /* align-items: flex-end; */
+    align-items: flex-end;
 
     font-size: 13px;
 }
@@ -59,3 +83,4 @@
 
     align-self: flex-end;
 }
+

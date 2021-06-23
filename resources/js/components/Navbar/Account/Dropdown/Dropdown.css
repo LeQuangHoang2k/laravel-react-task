@@ -1,10 +1,9 @@
-.account_name:hover + .account_dropdown {
+.account_content:hover .account_dropdown {
     display: block;
 }
 
 .account_dropdown {
     width: 270px;
-    /* height: 280px; */
     height: 230px;
     background-color: white;
     box-shadow: rgb(0 0 0 / 18%) 0px 6px 12px 0px;
@@ -12,46 +11,34 @@
     display: none;
 
     position: absolute;
-    top: 80px;
-    margin-left: -75px;
-    z-index: 9;
+    margin-top: 50px;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    z-index: 8;
 
-    animation-name: example;
-    animation-duration: 0.9s;
+    animation-name: account_dropdown;
+    animation-duration: 0.3s;
 }
 
-.account_dropdown::before {
+.account_dropdown::after {
     content: "";
 
-    width: 20px;
-    height: 20px;
-    background-color: white;
+    width: 10px;
+    height: 10px;
+    background-color: rgb(253, 216, 53);
 
     position: absolute;
-    margin-top: -10px;
-    margin-left: 47%;
-    /* transform: translateX(-50%); */
-    z-index: 10;
+    margin-left: 50%;
+    z-index: 5;
 
     transform: rotate(45deg);
+    transform-origin: 10px 0;
+
+    animation-name: account_arrow;
+    animation-duration: 0.3s;
 }
 
-.account_dropdown::after  {
-    content: "";
-
-    width: 200px;
-    height: 50px;
-    background-color: black;
-
-    position: absolute;
-    margin-top: -30px;
-    margin-left: 47%;
-    z-index: 10;
-
-}
-
-
-@keyframes example {
+@keyframes account_dropdown {
     0% {
         width: 0px;
         height: 0px;
@@ -59,5 +46,16 @@
     100% {
         width: 270px;
         height: 230px;
+    }
+}
+
+@keyframes account_arrow {
+    0% {
+        width: 0px;
+        height: 0px;
+    }
+    100% {
+        width: 10px;
+        height: 10px;
     }
 }

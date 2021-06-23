@@ -17,7 +17,8 @@ function Account(props) {
                 <img src={AccountArrow} className="account_arrow" alt="Image" />
 
                 {/* <span className="account_name">Account</span> */}
-                {/* <Dropdown /> */}
+                <Dropdown />
+                {/* <div className="account_dropdown"></div> */}
             </div>
         </div>
     );

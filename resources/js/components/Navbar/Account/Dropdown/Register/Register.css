@@ -13,4 +13,20 @@
 
     color: #4a4a4a;
     font-weight: bold;
+
+    transform-origin: 0 0;
+
+    animation-name: account_register;
+    animation-duration: 0.3s;
+}
+
+@keyframes account_register {
+    0% {
+        width: 0;
+        height: 0;
+    }
+    100% {
+        width: 235px;
+        height: 40px;
+    }
 }
