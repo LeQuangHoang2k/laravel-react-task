@@ -31,7 +31,7 @@
     height: 10px;
     /* background-color: green; */
 
-    position: relative;
+    position: absolute;
     margin-top: 40px;
 
     z-index: 8;

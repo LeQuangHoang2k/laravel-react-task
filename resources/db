@@ -1,0 +1,96 @@
+Table "Account" {
+  "AccountId" int [pk, increment]
+  "AccountEmail" varchar(255)
+  "AccountName" varchar(255)
+  "AccountPhone" varchar(255)
+  "AccountPictureURL" varchar(255)
+  "PasswordHash" varchar(255)
+  "AccountRole" varchar(255)
+  "CreateAt" datetime
+  "UpdateAt" datetime
+}
+
+Table "AccountGoogle" {
+  "GoogleId" int [pk, increment]
+  "GoogleEmail" varchar(255)
+  "GooglePictureURL" varchar(255)
+  "GoogleName" varchar(255)
+  "CreateAt" datetime
+  "UpdateAt" datetime
+}
+
+Table "AccountFacebook" {
+  "FacebookId" int [pk, increment]
+  "FacebookEmail" varchar(255)
+  "FacebookPictureURL" varchar(255)
+  "FacebookName" varchar(255)
+  "CreateAt" datetime
+  "UpdateAt" datetime
+}
+
+Table "Product" {
+  "ProductId" int [pk, increment]
+  "ProductCategory" varchar(255)
+  "ProductName" varchar(255)
+  "PriceDefault" int
+  "ProductPriority" int
+  "ProductDescription" varchar(255)
+  "ProductImportDate" datetime
+  "ProdictExpireDate" datetime
+  "CreateAt" datetime
+  "UpdateAt" datetime
+}
+
+Table "ProductImage" {
+  "ProductImageId" int [pk, increment]
+  "ProductId" int
+  "ProductImagePath" varchar(255)
+  "CreateAt" datetime
+  "UpdateAt" datetime
+}
+
+Table "ProductOption" {
+  "OptionId" int [pk, increment]
+  "ProductId" int
+  "OptionTitle" varchar(255)
+  "OptionValue" varchar(255)
+  "OptionPrice" int
+  "CreateAt" datetime
+  "UpdateAt" datetime
+}
+
+Table "OrderDetail" {
+  "Id" int [pk, increment]
+  "OrderId" int
+  "ProductId" int
+  "Amount" int
+  "OptionId" int
+  "UnitPrice" int
+  "CreateAt" datetime
+  "UpdateAt" datetime
+}
+
+Table "Order" {
+  "OrderId" int [pk, increment]
+  "OrderCustomerId" int
+  "OrderTitle" varchar(255)
+  "CreateAt" datetime
+  "UpdateAt" datetime
+}
+
+
+Ref:"Product"."ProductId" < "ProductImage"."ProductId"
+
+Ref:"Product"."ProductId" < "ProductOption"."ProductId"
+
+Ref:"Product"."ProductId" < "OrderDetail"."ProductId"
+
+Ref:"ProductOption"."OptionId" < "OrderDetail"."OptionId"
+
+Ref:"Order"."OrderId" < "OrderDetail"."OrderId"
+
+Ref: "AccountGoogle"."GoogleEmail" < "Account"."AccountEmail"
+
+Ref: "Account"."AccountEmail" < "AccountFacebook"."FacebookEmail"
+
+Ref: "Order"."OrderCustomerId" < "Account"."AccountId"

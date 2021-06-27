@@ -2,15 +2,14 @@ import React from 'react';
 
 import Navbar from '../components/Navbar/Navbar';
 import Body from '../components/Body/Body';
+import Breadcrumb from '../components/Breadcrumb/Breadcrumb';
 
-Home.propTypes = {
-    
-};
 
 function Home(props) {
     return (
         <div>
-            <Navbar/>   
+            <Navbar/>  
+            <Breadcrumb /> 
             <Body />
         </div>
     );
