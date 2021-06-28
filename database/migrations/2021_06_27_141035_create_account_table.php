@@ -14,7 +14,9 @@ class CreateAccountTable extends Migration
     public function up()
     {
         Schema::create('Account', function (Blueprint $table) {
-            $table->integer("AccountId")->autoIncrement();
+            $table->integer("AccountID")->autoIncrement();
+            $table->string("FacebookID");
+            $table->string("GooogleID");
             $table->string("AccountEmail");
             $table->string("AccountName");
             $table->string("AccountPhone");
