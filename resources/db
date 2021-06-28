@@ -10,18 +10,18 @@ Table "Account" {
   "UpdateAt" datetime
 }
 
-Table "AccountGoogle" {
-  "GoogleId" int [pk, increment]
-  "GoogleEmail" varchar(255)
+Table "Google" {
+  "AccountId" int [pk, increment]
+  "GoogleId" varchar(255)
   "GooglePictureURL" varchar(255)
   "GoogleName" varchar(255)
   "CreateAt" datetime
   "UpdateAt" datetime
 }
 
-Table "AccountFacebook" {
-  "FacebookId" int [pk, increment]
-  "FacebookEmail" varchar(255)
+Table "Facebook" {
+  "AccountId" int [pk, increment]
+  "FacebookId" varchar(255)
   "FacebookPictureURL" varchar(255)
   "FacebookName" varchar(255)
   "CreateAt" datetime
@@ -89,8 +89,8 @@ Ref:"ProductOption"."OptionId" < "OrderDetail"."OptionId"
 
 Ref:"Order"."OrderId" < "OrderDetail"."OrderId"
 
-Ref: "AccountGoogle"."GoogleEmail" < "Account"."AccountEmail"
+Ref: "Google"."AccountId" < "Account"."AccountId"
 
-Ref: "Account"."AccountEmail" < "AccountFacebook"."FacebookEmail"
+Ref: "Account"."AccountId" < "Facebook"."AccountId"
 
 Ref: "Order"."OrderCustomerId" < "Account"."AccountId"
