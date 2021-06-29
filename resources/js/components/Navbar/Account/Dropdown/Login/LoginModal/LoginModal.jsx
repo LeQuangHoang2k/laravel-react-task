@@ -6,6 +6,9 @@ import "./LoginModal.css";
 function LoginModal(props) {
     const { show, handleClose } = props;
 
+    const [email, setEmail] = useState("");
+    const [phone, setPhone] = useState("");
+
     return (
         <>
             <Modal show={show} onHide={handleClose}>
@@ -19,6 +22,7 @@ function LoginModal(props) {
                             <Form.Control
                                 type="email"
                                 placeholder="Enter email"
+                                onChange={(e) => setEmail(e.target.value)}
                             />
                         </Form.Group>
 
@@ -27,6 +31,7 @@ function LoginModal(props) {
                             <Form.Control
                                 type="password"
                                 placeholder="Password"
+                                onChange={(e) => setPassword(e.target.value)}
                             />
                         </Form.Group>
                     </Form>
