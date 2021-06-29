@@ -7987,7 +7987,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/esm/react-router.js");
-/* harmony import */ var _pages_Home__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./pages/Home */ "./resources/js/pages/Home.jsx");
+/* harmony import */ var _pages_Home_Home__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./pages/Home/Home */ "./resources/js/pages/Home/Home.jsx");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
 
@@ -7999,7 +7999,7 @@ function App() {
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Route, {
       path: "/",
       exact: true,
-      component: _pages_Home__WEBPACK_IMPORTED_MODULE_1__.default
+      component: _pages_Home_Home__WEBPACK_IMPORTED_MODULE_1__.default
     })
   });
 }
@@ -8802,10 +8802,10 @@ function RegisterModal(props) {
 
 /***/ }),
 
-/***/ "./resources/js/components/Navbar/Cart/Cart.js":
-/*!*****************************************************!*\
-  !*** ./resources/js/components/Navbar/Cart/Cart.js ***!
-  \*****************************************************/
+/***/ "./resources/js/components/Navbar/Cart/Cart.jsx":
+/*!******************************************************!*\
+  !*** ./resources/js/components/Navbar/Cart/Cart.jsx ***!
+  \******************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -8854,7 +8854,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var _Account_Account__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Account/Account */ "./resources/js/components/Navbar/Account/Account.jsx");
-/* harmony import */ var _Cart_Cart__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Cart/Cart */ "./resources/js/components/Navbar/Cart/Cart.js");
+/* harmony import */ var _Cart_Cart__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Cart/Cart */ "./resources/js/components/Navbar/Cart/Cart.jsx");
 /* harmony import */ var _Search_Search__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Search/Search */ "./resources/js/components/Navbar/Search/Search.jsx");
 /* harmony import */ var _Navbar_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Navbar.css */ "./resources/js/components/Navbar/Navbar.css");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
@@ -8954,10 +8954,10 @@ if (document.getElementById("root")) {
 
 /***/ }),
 
-/***/ "./resources/js/pages/Home.jsx":
-/*!*************************************!*\
-  !*** ./resources/js/pages/Home.jsx ***!
-  \*************************************/
+/***/ "./resources/js/pages/Home/Home.jsx":
+/*!******************************************!*\
+  !*** ./resources/js/pages/Home/Home.jsx ***!
+  \******************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -8966,9 +8966,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var _components_Navbar_Navbar__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/Navbar/Navbar */ "./resources/js/components/Navbar/Navbar.jsx");
-/* harmony import */ var _components_Body_Body__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/Body/Body */ "./resources/js/components/Body/Body.jsx");
-/* harmony import */ var _components_Breadcrumb_Breadcrumb__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/Breadcrumb/Breadcrumb */ "./resources/js/components/Breadcrumb/Breadcrumb.jsx");
+/* harmony import */ var _components_Navbar_Navbar__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../components/Navbar/Navbar */ "./resources/js/components/Navbar/Navbar.jsx");
+/* harmony import */ var _components_Body_Body__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../components/Body/Body */ "./resources/js/components/Body/Body.jsx");
+/* harmony import */ var _components_Breadcrumb_Breadcrumb__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../components/Breadcrumb/Breadcrumb */ "./resources/js/components/Breadcrumb/Breadcrumb.jsx");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
 

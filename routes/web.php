@@ -17,6 +17,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/api/login', function () {
+Route::post('/api/login', function () {
     return view('welcome');
 });
