@@ -8778,7 +8778,7 @@ function RegisterModal(props) {
             case 9:
               _yield$res = _context.sent;
               data = _yield$res.data;
-              console.log("php: ", res.config.data); //res
+              console.log("php: ", res); //res
               // handleClose();
               // window.location.reload();
 

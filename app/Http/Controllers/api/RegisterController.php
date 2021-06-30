@@ -8,9 +8,11 @@ use Illuminate\Http\Request;
 class RegisterController extends Controller
 {
     public function register(Request $request){
-        echo("welcome to register");
+        // echo("welcome to register");
+        print_r($request->json()->all());
+        print_r($request->email);
 
-       //input
+        //input
         $check= $this->checkRequest($request);
         if(!$check) return;
 
