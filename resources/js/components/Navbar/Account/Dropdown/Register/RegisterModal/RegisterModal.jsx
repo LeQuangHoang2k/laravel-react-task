@@ -7,8 +7,11 @@ function RegisterModal(props) {
     const { show, handleClose } = props;
 
     const [email, setEmail] = useState("");
+
     const [phone, setPhone] = useState("");
+
     const [password, setPassword] = useState("");
+
     const [confirmPassword, setConfirmPassword] = useState("");
 
     var formData = {
@@ -22,13 +25,17 @@ function RegisterModal(props) {
         alert("đợi tí");
 
         //input
+
         if (!checkRequest()) return;
+
         console.log(checkRequest());
 
         //db
+
         const res = await axios.post("/api/login", formData);
 
         const { data } = await res;
+
         console.log("php: ", res);
 
         //res
@@ -40,9 +47,12 @@ function RegisterModal(props) {
         console.log(formData);
 
         if (!email || email.length < 5) return alert("Email not valid");
+
         if (!phone || phone.length < 9) return alert("Phone not valid");
+
         if (!password || password.length < 5)
             return alert("Password not valid");
+
         if (password !== confirmPassword) return alert("Password not confirm");
 
         return true;
