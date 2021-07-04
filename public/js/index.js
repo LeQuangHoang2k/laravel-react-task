@@ -8374,7 +8374,7 @@ function Facebook(props) {
   };
 
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)((react_facebook_login__WEBPACK_IMPORTED_MODULE_1___default()), {
-    appId: "863062867922730",
+    appId: "4280930138626348",
     autoLoad: false,
     fields: "name,email,picture",
     callback: responseFacebook,

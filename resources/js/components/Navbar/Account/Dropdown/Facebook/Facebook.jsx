@@ -16,7 +16,7 @@ function Facebook(props) {
 
     return (
         <FacebookLogin
-            appId="863062867922730"
+            appId="4280930138626348"
             autoLoad={false}
             fields="name,email,picture"
             callback={responseFacebook}
