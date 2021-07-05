@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\api\LoginController;
 use App\Http\Controllers\api\RegisterController;
 use Illuminate\Support\Facades\Route;
 
@@ -18,4 +19,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::post('/api/login', [RegisterController::class, 'register']);
+Route::post('/api/register', [RegisterController::class, 'register']);
+Route::post('/api/login', [LoginController::class, 'login']);
+

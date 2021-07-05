@@ -4,82 +4,75 @@ namespace App\Http\Controllers\api;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class LoginController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
+    public function login(Request $request){
+        //input
+
+        $checkRequest= $this->checkRequest($request);
+
+        if($this->checkRequest($request) !=="Valid") return response()->json(['message' => "Error: ".$checkRequest]);
+  
+        //check db
+
+        $checkExistAccount= $this->checkExistAccount($request);
+
+        if($this->checkExistAccount($request) !=="registered") return response()->json(['message' => "Error: ".$checkExistAccount]);
+
+        //main
+
+        
+
+        //res
+
+        return response()->json(['message' => "success",'data'=> "từ từ"]);
+    
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+    public function checkRequest($request){
+
+        if(!$this->validEmail($request)) return "Your Email not valid."; 
+
+        if(!$this->validPassword($request)) return "Your Password not valid.";
+
+        return "Valid";
+
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
+    public function checkExistAccount($request){
+
+        $Account = DB::table('Account')->where("AccountEmail",$request->email)->first();
+
+        if($Account===null) return "Not exist";
+
+        if($Account->PasswordHash === NULL || $Account->PasswordHash === "" ){  
+            return "Not registered";
+        }
+
+        return "registered";
+
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
+    public function validEmail($request){ 
+        
+        $email = $request->email;
+        
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            return false;
+        }
+
+        return true;
+
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
+    public function validPassword($request){
+        
+        $match = preg_match("/[a-zA-Z0-9]/",$request->password);
+        
+        return $match;
+
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
 }

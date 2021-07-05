@@ -32,7 +32,7 @@ function RegisterModal(props) {
 
         //db
 
-        const res = await axios.post("/api/login", formData);
+        const res = await axios.post("/api/register", formData);
 
         const { data } = await res;
 

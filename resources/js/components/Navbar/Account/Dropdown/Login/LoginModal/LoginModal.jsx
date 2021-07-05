@@ -7,7 +7,47 @@ function LoginModal(props) {
     const { show, handleClose } = props;
 
     const [email, setEmail] = useState("");
-    const [phone, setPhone] = useState("");
+    const [password, setPassword] = useState("");
+
+    var formData = {
+        email,
+        password,
+    };
+
+    const login = async () => {
+        alert("đợi tí");
+
+        //input
+
+        if (!checkRequest()) return;
+
+        console.log(checkRequest());
+
+        //db
+
+        const res = await axios.post("/api/login", formData);
+
+        const { data } = await res;
+
+        alert("Notification : " + data.message);
+        
+        console.log("php: ", data);
+
+        //res
+        // handleClose();
+        // window.location.reload();
+    };
+
+    const checkRequest = () => {
+        console.log(formData);
+
+        if (!email || email.length < 5) return alert("Email not valid");
+
+        if (!password || password.length < 5)
+            return alert("Password not valid");
+
+        return true;
+    };
 
     return (
         <>
@@ -41,7 +81,7 @@ function LoginModal(props) {
                     <Button variant="secondary" onClick={handleClose}>
                         Close
                     </Button>
-                    <Button variant="primary" onClick={handleClose}>
+                    <Button variant="primary" onClick={login}>
                         Save Changes
                     </Button>
                 </Modal.Footer>
