@@ -4,6 +4,7 @@ namespace App\Http\Controllers\api;
 
 use App\Http\Controllers\Controller;
 use App\Models\Account;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -21,13 +22,13 @@ class RegisterController extends Controller
 
         $checkRequest= $this->checkRequest($request);
 
-        if($this->checkRequest($request) !=="Valid") return response()->json(['message' => $checkRequest]);
+        if($this->checkRequest($request) !=="Valid") return response()->json(['message' => "Error: ".$checkRequest]);
   
         //check db
 
         $checkExistAccount= $this->checkExistAccount($request);
 
-        if($this->checkExistAccount($request) ==="registered") return response()->json(['message' => $checkExistAccount]);
+        if($this->checkExistAccount($request) ==="registered") return response()->json(['message' => "Error: ".$checkExistAccount]);
 
         //main
 
@@ -40,7 +41,7 @@ class RegisterController extends Controller
         }
 
         //res
-        
+
         return response()->json(['message' => "success",'data'=> "từ từ"]);
     }
 
@@ -78,7 +79,8 @@ class RegisterController extends Controller
             "AccountEmail" => $request->email,
             "AccountPhone" => $request->phone,
             "PasswordHash" => $request->password,
-            "AccountRole" => "user"
+            "AccountRole" => "user",
+            'created_at' => Carbon::today()->toDateTimeString(),
         ]); 
 
     }
@@ -88,6 +90,7 @@ class RegisterController extends Controller
         DB::table("Account")->update([
             "AccountPhone" => $request->phone,
             "PasswordHash" => $request->password,
+            'updated_at' => Carbon::today()->toDateTimeString(),
         ]); 
 
     }
