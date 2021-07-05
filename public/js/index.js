@@ -8778,11 +8778,12 @@ function RegisterModal(props) {
             case 9:
               _yield$res = _context.sent;
               data = _yield$res.data;
-              console.log("php: ", res); //res
+              alert("Notification : " + data.message);
+              console.log("php: ", data); //res
               // handleClose();
               // window.location.reload();
 
-            case 12:
+            case 13:
             case "end":
               return _context.stop();
           }

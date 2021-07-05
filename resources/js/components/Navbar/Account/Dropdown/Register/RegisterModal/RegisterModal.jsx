@@ -36,7 +36,9 @@ function RegisterModal(props) {
 
         const { data } = await res;
 
-        console.log("php: ", res);
+        alert("Notification : " + data.message);
+        
+        console.log("php: ", data);
 
         //res
         // handleClose();
