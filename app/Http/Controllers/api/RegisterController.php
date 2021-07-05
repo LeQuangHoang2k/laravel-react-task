@@ -3,9 +3,11 @@
 namespace App\Http\Controllers\api;
 
 use App\Http\Controllers\Controller;
+use App\Models\Account;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+
 
 class RegisterController extends Controller
 {
@@ -19,19 +21,26 @@ class RegisterController extends Controller
 
         $checkRequest= $this->checkRequest($request);
 
-        if($this->checkRequest($request) !=="valid") return response()->json(['message' => $checkRequest]);
+        if($this->checkRequest($request) !=="Valid") return response()->json(['message' => $checkRequest]);
   
         //check db
 
         $checkExistAccount= $this->checkExistAccount($request);
 
-        if($this->checkExistAccount($request) !=="valid") return response()->json(['message' => $checkExistAccount]);
+        if($this->checkExistAccount($request) ==="registered") return response()->json(['message' => $checkExistAccount]);
 
         //main
 
-        $this->updateAccount($request);
+        if($this->checkExistAccount($request) ==="Not exist") {
+            $this->createAccount($request);
+        }
+
+        else{
+            $this->updateAccount($request);
+        }
 
         //res
+        
         return response()->json(['message' => "success",'data'=> "từ từ"]);
     }
 
@@ -45,33 +54,41 @@ class RegisterController extends Controller
 
         if(!$this->validConfirmPassword($request)) return "Your Confirm Password not valid.";     
 
-        return "valid";
+        return "Valid";
 
     }
 
     public function checkExistAccount($request){
 
         $Account = DB::table('Account')->where("AccountEmail",$request->email)->first();
-        
-        if($Account->PasswordHash !== NULL && $Account->PasswordHash !== "" ){
-            return "Your account is registered";
+
+        if($Account===null) return "Not exist";
+
+        if($Account->PasswordHash === NULL || $Account->PasswordHash === "" ){  
+            return "Not registered";
         }
 
-        return "valid";
+        return "registered";
 
     }
     
+    public function createAccount($request){
+
+        DB::table("Account")->insert([
+            "AccountEmail" => $request->email,
+            "AccountPhone" => $request->phone,
+            "PasswordHash" => $request->password,
+            "AccountRole" => "user"
+        ]); 
+
+    }
+
     public function updateAccount($request){
 
-        $Account = DB::table('Account')->where("AccountEmail",$request->email)->update(
-            [
-                'AccountEmail' => $request->email,
-                'AccountPhone' => $request->phone,
-                'PasswordHash' => $request->pasword,
-                'AccountRole' => "user",
-                
-            ]
-        );
+        DB::table("Account")->update([
+            "AccountPhone" => $request->phone,
+            "PasswordHash" => $request->password,
+        ]); 
 
     }
 
@@ -92,8 +109,6 @@ class RegisterController extends Controller
         
         $match = preg_match("/[0-9]/",$request->phone);
 
-        // echo("match la : " . $match);
-
         return $match;
 
     }
@@ -102,8 +117,6 @@ class RegisterController extends Controller
         
         $match = preg_match("/[a-zA-Z0-9]/",$request->password);
         
-        // echo("match la : " . $match);
-
         return $match;
 
     }

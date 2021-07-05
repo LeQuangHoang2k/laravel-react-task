@@ -15,14 +15,14 @@ class CreateAccountTable extends Migration
     {
         Schema::create('Account', function (Blueprint $table) {
             $table->integer("AccountID")->autoIncrement();
-            $table->string("FacebookID");
-            $table->string("GooogleID");
-            $table->string("AccountEmail");
-            $table->string("AccountName");
-            $table->string("AccountPhone");
-            $table->string("AccountPictureURL");
-            $table->string("PasswordHash");
-            $table->string("AccountRole");
+            $table->string("FacebookID")->default('');
+            $table->string("GoogleID")->default('');
+            $table->string("AccountEmail")->default('');
+            $table->string("AccountName")->default('');
+            $table->string("AccountPhone")->default('');
+            $table->string("AccountPictureURL")->default('');
+            $table->string("PasswordHash")->default('');
+            $table->string("AccountRole")->default('');
             $table->timestamps();
         });
     }
