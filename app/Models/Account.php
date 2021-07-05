@@ -5,7 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Account extends Model
+
+use Tymon\JWTAuth\Contracts\JWTSubject;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+
+class Account extends Authenticatable implements JWTSubject
 {
     use HasFactory;
 
@@ -19,5 +23,13 @@ class Account extends Model
         "AccountPictureURL",
         "PasswordHash",
         "AccountRole",
-    ]
+    ];
+    
+    public function getJWTIdentifier() {
+        return $this->getKey();
+    }
+
+    public function getJWTCustomClaims() {
+        return [];
+    }    
 }
