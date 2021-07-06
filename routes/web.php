@@ -21,4 +21,8 @@ Route::get('/', function () {
 
 Route::post('/api/register', [RegisterController::class, 'register']);
 Route::post('/api/login', [LoginController::class, 'login']);
+Route::post('/api/login-facebook', [FacebookController::class, 'login']);
+Route::post('/api/login-google', [GoogleController::class, 'login']);
+
+
 
