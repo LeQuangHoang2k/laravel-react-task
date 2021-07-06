@@ -8567,7 +8567,7 @@ function LoginModal(props) {
 
   var login = /*#__PURE__*/function () {
     var _ref = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
-      var res, _yield$res, data;
+      var res, _yield$res, data, a;
 
       return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
         while (1) {
@@ -8597,11 +8597,16 @@ function LoginModal(props) {
               _yield$res = _context.sent;
               data = _yield$res.data;
               alert("Notification : " + data.message);
-              console.log("php: ", data); //res
-              // handleClose();
-              // window.location.reload();
+              console.log("php: ", data); //main
+              //res
 
-            case 13:
+              localStorage.setItem("account", JSON.stringify(data.account));
+              a = localStorage.getItem("account");
+              a = JSON.parse(a);
+              console.log(a);
+              window.location.href = "/";
+
+            case 18:
             case "end":
               return _context.stop();
           }

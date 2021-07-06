@@ -78,7 +78,7 @@ class RegisterController extends Controller
         DB::table("Account")->insert([
             "AccountEmail" => $request->email,
             "AccountPhone" => $request->phone,
-            "PasswordHash" => $request->password,
+            "PasswordHash" => bcrypt($request->password),
             "AccountRole" => "user",
             'created_at' => Carbon::today()->toDateTimeString(),
         ]); 
@@ -89,7 +89,7 @@ class RegisterController extends Controller
 
         DB::table("Account")->update([
             "AccountPhone" => $request->phone,
-            "PasswordHash" => $request->password,
+            "PasswordHash" => bcrypt($request->password),
             'updated_at' => Carbon::today()->toDateTimeString(),
         ]); 
 
@@ -131,6 +131,5 @@ class RegisterController extends Controller
         return true;
 
     }
-
 
 }

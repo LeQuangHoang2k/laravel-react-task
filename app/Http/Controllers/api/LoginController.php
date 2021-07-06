@@ -3,8 +3,13 @@
 namespace App\Http\Controllers\api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Middleware\Authenticate;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+
+//jwt
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class LoginController extends Controller
 {
@@ -21,14 +26,13 @@ class LoginController extends Controller
 
         if($this->checkExistAccount($request) !=="registered") return response()->json(['message' => "Error: ".$checkExistAccount]);
 
-        //main
+        //main-jwt token
 
+        $Account = DB::select('select AccountID,AccountEmail,AccountName,AccountPhone,AccountPictureURL,AccountRole from Account where AccountEmail = ?', [$request->email]);
         
-
         //res
 
-        return response()->json(['message' => "success",'data'=> "từ từ"]);
-    
+        return response()->json(['message' => "success",'account'=>$Account[0]]);
     }
 
     public function checkRequest($request){
@@ -50,6 +54,11 @@ class LoginController extends Controller
         if($Account->PasswordHash === NULL || $Account->PasswordHash === "" ){  
             return "Not registered";
         }
+
+        if( ! Hash::check( $request->password , $Account->PasswordHash ) ){
+            return "Not match";
+        }
+
 
         return "registered";
 

@@ -33,9 +33,18 @@ function LoginModal(props) {
         
         console.log("php: ", data);
 
+        //main
+
         //res
-        // handleClose();
-        // window.location.reload();
+
+        localStorage.setItem("account",JSON.stringify(data.account));
+        let a= localStorage.getItem("account");
+
+        a = JSON.parse(a)
+
+        console.log(a);
+        
+        window.location.href="/";
     };
 
     const checkRequest = () => {
