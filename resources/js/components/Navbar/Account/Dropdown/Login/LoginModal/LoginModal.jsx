@@ -37,6 +37,8 @@ function LoginModal(props) {
 
         //res
 
+        if(!data || !data.account) return;
+
         localStorage.setItem("account",JSON.stringify(data.account));
         let a= localStorage.getItem("account");
 
