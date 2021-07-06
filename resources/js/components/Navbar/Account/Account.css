@@ -20,6 +20,7 @@
     position: relative;
 
     display: flex;
+    padding-left: 10px;
 
     cursor: pointer;
 }
@@ -83,4 +84,3 @@
 
     align-self: flex-end;
 }
-

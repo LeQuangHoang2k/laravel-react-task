@@ -8268,6 +8268,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _images_AccountIcon_png__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../images/AccountIcon.png */ "./resources/images/AccountIcon.png");
 /* harmony import */ var _images_AccountArrow_png__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../../images/AccountArrow.png */ "./resources/images/AccountArrow.png");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
 
 
 
@@ -8277,19 +8289,46 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function Account(props) {
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(JSON.parse(localStorage.getItem("account")) || null),
+      _useState2 = _slicedToArray(_useState, 2),
+      account = _useState2[0],
+      setAccount = _useState2[1];
+
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(_images_AccountIcon_png__WEBPACK_IMPORTED_MODULE_3__.default),
+      _useState4 = _slicedToArray(_useState3, 2),
+      accountImage = _useState4[0],
+      setAccountImage = _useState4[1];
+
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)("My Account"),
+      _useState6 = _slicedToArray(_useState5, 2),
+      accountTitle = _useState6[0],
+      setAccountTitle = _useState6[1];
+
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    updateAccountUI();
+  }, []);
+
+  var updateAccountUI = function updateAccountUI() {
+    if (!account) return alert("Vui lòng đăng nhập để nhận ưu đãi khi săn sale Tiki 7/7 nhé !");
+    if (account.AccountPictureURL !== "") setAccountImage(account.AccountPictureURL);
+    if (account.AccountName !== "") setAccountTitle(account.AccountName);else {
+      setAccountTitle(account.AccountEmail);
+    }
+  };
+
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
     className: "account_wrapper",
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
       className: "account_content",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("img", {
-        src: _images_AccountIcon_png__WEBPACK_IMPORTED_MODULE_3__.default,
+        src: accountImage,
         className: "account_image",
         alt: "Image"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
         className: "account_name",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
           className: "account_title",
-          children: "L\xEA Quang Ho\xE0ng"
+          children: accountTitle
         })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("img", {
         src: _images_AccountArrow_png__WEBPACK_IMPORTED_MODULE_4__.default,
@@ -13818,7 +13857,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".account_wrapper {\r\n    width: 180px;\r\n    height: 100px;\r\n    /* background-color: white; */\r\n\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n\r\n    color: white;\r\n    font-weight: bold;\r\n    font-size: 14px;\r\n}\r\n\r\n.account_content {\r\n    width: 160px;\r\n    height: 40px;\r\n    /* background-color: red; */\r\n\r\n    position: relative;\r\n\r\n    display: flex;\r\n\r\n    cursor: pointer;\r\n}\r\n\r\n.account_content::after {\r\n    content: \"\";\r\n\r\n    width: 160px;\r\n    height: 10px;\r\n    /* background-color: green; */\r\n\r\n    position: absolute;\r\n    margin-top: 40px;\r\n\r\n    z-index: 8;\r\n\r\n    cursor: pointer;\r\n}\r\n\r\n.account_image {\r\n    width: 32px;\r\n    height: 32px;\r\n\r\n    position: relative;\r\n\r\n    /* display: block; */\r\n    /* align-self: flex-end; */\r\n    margin-top: 4px;\r\n\r\n    cursor: pointer;\r\n}\r\n\r\n.account_name {\r\n    /* min-width: 50px; */\r\n    max-width: 100px;\r\n    height: 36px;\r\n    /* background-color: red; */\r\n\r\n    position: relative;\r\n    margin-top: 3px;\r\n    margin-left: 5px;\r\n\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: flex-end;\r\n\r\n    font-size: 13px;\r\n}\r\n\r\n.account_title {\r\n    align-self: flex-end;\r\n\r\n    white-space: nowrap;\r\n    overflow: hidden;\r\n    text-overflow: ellipsis;\r\n}\r\n\r\n.account_arrow {\r\n    width: 16px;\r\n    height: 16px;\r\n\r\n    align-self: flex-end;\r\n}\r\n\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".account_wrapper {\r\n    width: 180px;\r\n    height: 100px;\r\n    /* background-color: white; */\r\n\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n\r\n    color: white;\r\n    font-weight: bold;\r\n    font-size: 14px;\r\n}\r\n\r\n.account_content {\r\n    width: 160px;\r\n    height: 40px;\r\n    /* background-color: red; */\r\n\r\n    position: relative;\r\n\r\n    display: flex;\r\n    padding-left: 10px;\r\n\r\n    cursor: pointer;\r\n}\r\n\r\n.account_content::after {\r\n    content: \"\";\r\n\r\n    width: 160px;\r\n    height: 10px;\r\n    /* background-color: green; */\r\n\r\n    position: absolute;\r\n    margin-top: 40px;\r\n\r\n    z-index: 8;\r\n\r\n    cursor: pointer;\r\n}\r\n\r\n.account_image {\r\n    width: 32px;\r\n    height: 32px;\r\n\r\n    position: relative;\r\n\r\n    /* display: block; */\r\n    /* align-self: flex-end; */\r\n    margin-top: 4px;\r\n\r\n    cursor: pointer;\r\n}\r\n\r\n.account_name {\r\n    /* min-width: 50px; */\r\n    max-width: 100px;\r\n    height: 36px;\r\n    /* background-color: red; */\r\n\r\n    position: relative;\r\n    margin-top: 3px;\r\n    margin-left: 5px;\r\n\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: flex-end;\r\n\r\n    font-size: 13px;\r\n}\r\n\r\n.account_title {\r\n    align-self: flex-end;\r\n\r\n    white-space: nowrap;\r\n    overflow: hidden;\r\n    text-overflow: ellipsis;\r\n}\r\n\r\n.account_arrow {\r\n    width: 16px;\r\n    height: 16px;\r\n\r\n    align-self: flex-end;\r\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
