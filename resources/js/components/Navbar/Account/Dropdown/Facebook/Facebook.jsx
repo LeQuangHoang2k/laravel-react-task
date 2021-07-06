@@ -7,21 +7,21 @@ function Facebook(props) {
     const responseFacebook = async (response) => {
         alert("đợi tí");
 
-        const { id, name, picture } = response;
+        const { id, email, name, picture } = response;
         const pictureURL = picture.data.url;
         console.log(response, pictureURL);
 
         let formData = {
             id,
+            email,
             name,
-            picture,
+            pictureURL,
         };
 
         console.log(formData);
 
-        
         //input
-        
+
         //db
         
         const res = await axios.post("/api/login-facebook", formData);
@@ -29,10 +29,9 @@ function Facebook(props) {
         const { data } = await res;
         
         alert("Notification : " + data.message);
-        return;
-
+        
         console.log("php: ", data);
-
+        
         //main
 
         //res

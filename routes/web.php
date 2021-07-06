@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\api\FacebookController;
+use App\Http\Controllers\api\GoogleController;
 use App\Http\Controllers\api\LoginController;
 use App\Http\Controllers\api\RegisterController;
 use Illuminate\Support\Facades\Route;

@@ -4,10 +4,45 @@ import { GoogleLogin } from "react-google-login";
 import "./Google.css";
 
 function Google(props) {
-    const google = (resGG) => {
-        const { googleId, tokenId } = resGG;
+    const google = async (resGG) => {
+        const { email, googleId, imageUrl, name } = resGG.profileObj;
         console.log(resGG);
+
+        //input
+
+        let formData = {
+            id: googleId,
+            email,
+            name,
+            pictureURL: imageUrl,
+        };
+
+        console.log(formData);
+
+        //db
+
+        const res = await axios.post("/api/login-google", formData);
+
+        const { data } = await res;
+
+        alert("Notification : " + data.message);
+
+        console.log("php: ", data);
+
+        //main
+
+        //res
+
+        localStorage.setItem("account", JSON.stringify(data.account));
+        let a = localStorage.getItem("account");
+
+        a = JSON.parse(a);
+
+        console.log(a);
+
+        window.location.href = "/";
     };
+
     const googleFailure = (res) => {};
 
     return (

@@ -20,7 +20,7 @@ class CreateAccountTable extends Migration
             $table->string("AccountEmail")->default('');
             $table->string("AccountName")->default('');
             $table->string("AccountPhone")->default('');
-            $table->string("AccountPictureURL")->default('');
+            $table->string("AccountPictureURL",255)->default('');
             $table->string("PasswordHash")->default('');
             $table->string("AccountRole")->default('');
             $table->timestamps();
