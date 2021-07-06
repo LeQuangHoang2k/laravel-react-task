@@ -5,14 +5,17 @@ import "./Account.css";
 
 import AccountIcon from "../../../../images/AccountIcon.png";
 import AccountArrow from "../../../../images/AccountArrow.png";
+import DropdownUser from "./DropdownUser/DropdownUser";
 
 function Account(props) {
     const [account, setAccount] = useState(
         JSON.parse(localStorage.getItem("account")) || null
     );
-
+    
     const [accountImage, setAccountImage] = useState(AccountIcon);
     const [accountTitle, setAccountTitle] = useState("My Account");
+
+    const [dropdownComponent, setDropdownComponent] = useState(<Dropdown />);
 
     useEffect(() => {
         updateAccountUI();
@@ -31,7 +34,12 @@ function Account(props) {
         else {
             setAccountTitle(account.AccountEmail);
         }
+
+        setDropdownComponent(<DropdownUser />)
+
     };
+
+
 
     return (
         <div className="account_wrapper">
@@ -42,7 +50,8 @@ function Account(props) {
                 </div>
                 <img src={AccountArrow} className="account_arrow" alt="Image" />
 
-                <Dropdown />
+                {dropdownComponent}
+                
             </div>
         </div>
     );

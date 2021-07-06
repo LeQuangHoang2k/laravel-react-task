@@ -8267,7 +8267,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Account_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Account.css */ "./resources/js/components/Navbar/Account/Account.css");
 /* harmony import */ var _images_AccountIcon_png__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../images/AccountIcon.png */ "./resources/images/AccountIcon.png");
 /* harmony import */ var _images_AccountArrow_png__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../../images/AccountArrow.png */ "./resources/images/AccountArrow.png");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _DropdownUser_DropdownUser__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./DropdownUser/DropdownUser */ "./resources/js/components/Navbar/Account/DropdownUser/DropdownUser.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -8279,6 +8280,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
 
 
 
@@ -8304,6 +8306,11 @@ function Account(props) {
       accountTitle = _useState6[0],
       setAccountTitle = _useState6[1];
 
+  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Dropdown_Dropdown__WEBPACK_IMPORTED_MODULE_1__.default, {})),
+      _useState8 = _slicedToArray(_useState7, 2),
+      dropdownComponent = _useState8[0],
+      setDropdownComponent = _useState8[1];
+
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     updateAccountUI();
   }, []);
@@ -8314,32 +8321,104 @@ function Account(props) {
     if (account.AccountName !== "") setAccountTitle(account.AccountName);else {
       setAccountTitle(account.AccountEmail);
     }
+    setDropdownComponent( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_DropdownUser_DropdownUser__WEBPACK_IMPORTED_MODULE_5__.default, {}));
   };
 
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
     className: "account_wrapper",
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
       className: "account_content",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("img", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("img", {
         src: accountImage,
         className: "account_image",
         alt: "Image"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
         className: "account_name",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("span", {
           className: "account_title",
           children: accountTitle
         })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("img", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("img", {
         src: _images_AccountArrow_png__WEBPACK_IMPORTED_MODULE_4__.default,
         className: "account_arrow",
         alt: "Image"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Dropdown_Dropdown__WEBPACK_IMPORTED_MODULE_1__.default, {})]
+      }), dropdownComponent]
     })
   });
 }
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Account);
+
+/***/ }),
+
+/***/ "./resources/js/components/Navbar/Account/DropdownUser/DropdownUser.jsx":
+/*!******************************************************************************!*\
+  !*** ./resources/js/components/Navbar/Account/DropdownUser/DropdownUser.jsx ***!
+  \******************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _Logout_Logout__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Logout/Logout */ "./resources/js/components/Navbar/Account/DropdownUser/Logout/Logout.jsx");
+/* harmony import */ var _DropdownUser_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./DropdownUser.css */ "./resources/js/components/Navbar/Account/DropdownUser/DropdownUser.css");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+
+function DropdownUser(props) {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+    className: "account_dropdown",
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_Logout_Logout__WEBPACK_IMPORTED_MODULE_1__.default, {})
+  });
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (DropdownUser);
+
+/***/ }),
+
+/***/ "./resources/js/components/Navbar/Account/DropdownUser/Logout/Logout.jsx":
+/*!*******************************************************************************!*\
+  !*** ./resources/js/components/Navbar/Account/DropdownUser/Logout/Logout.jsx ***!
+  \*******************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/esm/Button.js");
+/* harmony import */ var _Logout_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Logout.css */ "./resources/js/components/Navbar/Account/DropdownUser/Logout/Logout.css");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+
+
+function Logout(props) {
+  var submit = function submit() {
+    localStorage.removeItem("account");
+    window.location.reload();
+  };
+
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__.default, {
+      variant: "account_logout",
+      onClick: submit,
+      children: "Logout"
+    })
+  });
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Logout);
 
 /***/ }),
 
@@ -13858,6 +13937,54 @@ __webpack_require__.r(__webpack_exports__);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, ".account_wrapper {\r\n    width: 180px;\r\n    height: 100px;\r\n    /* background-color: white; */\r\n\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n\r\n    color: white;\r\n    font-weight: bold;\r\n    font-size: 14px;\r\n}\r\n\r\n.account_content {\r\n    width: 160px;\r\n    height: 40px;\r\n    /* background-color: red; */\r\n\r\n    position: relative;\r\n\r\n    display: flex;\r\n    padding-left: 10px;\r\n\r\n    cursor: pointer;\r\n}\r\n\r\n.account_content::after {\r\n    content: \"\";\r\n\r\n    width: 160px;\r\n    height: 10px;\r\n    /* background-color: green; */\r\n\r\n    position: absolute;\r\n    margin-top: 40px;\r\n\r\n    z-index: 8;\r\n\r\n    cursor: pointer;\r\n}\r\n\r\n.account_image {\r\n    width: 32px;\r\n    height: 32px;\r\n\r\n    position: relative;\r\n\r\n    /* display: block; */\r\n    /* align-self: flex-end; */\r\n    margin-top: 4px;\r\n\r\n    cursor: pointer;\r\n}\r\n\r\n.account_name {\r\n    /* min-width: 50px; */\r\n    max-width: 100px;\r\n    height: 36px;\r\n    /* background-color: red; */\r\n\r\n    position: relative;\r\n    margin-top: 3px;\r\n    margin-left: 5px;\r\n\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: flex-end;\r\n\r\n    font-size: 13px;\r\n}\r\n\r\n.account_title {\r\n    align-self: flex-end;\r\n\r\n    white-space: nowrap;\r\n    overflow: hidden;\r\n    text-overflow: ellipsis;\r\n}\r\n\r\n.account_arrow {\r\n    width: 16px;\r\n    height: 16px;\r\n\r\n    align-self: flex-end;\r\n}\r\n", ""]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/components/Navbar/Account/DropdownUser/DropdownUser.css":
+/*!****************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/components/Navbar/Account/DropdownUser/DropdownUser.css ***!
+  \****************************************************************************************************************************************************************************************************************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
+// Imports
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, ".account_content:hover .account_dropdown {\r\n    display: block;\r\n}\r\n\r\n.account_dropdown {\r\n    width: 270px;\r\n    height: 230px;\r\n    background-color: white;\r\n    box-shadow: rgb(0 0 0 / 18%) 0px 6px 12px 0px;\r\n\r\n    display: none;\r\n\r\n    position: absolute;\r\n    margin-top: 50px;\r\n    margin-left: 50%;\r\n    transform: translateX(-50%);\r\n    z-index: 8;\r\n\r\n    -webkit-animation-name: account_dropdown;\r\n\r\n            animation-name: account_dropdown;\r\n    -webkit-animation-duration: 0.3s;\r\n            animation-duration: 0.3s;\r\n}\r\n\r\n.account_dropdown::after {\r\n    content: \"\";\r\n\r\n    width: 10px;\r\n    height: 10px;\r\n    background-color: rgb(253, 216, 53);\r\n\r\n    position: absolute;\r\n    margin-left: 50%;\r\n    z-index: 5;\r\n\r\n    transform: rotate(45deg);\r\n    transform-origin: 10px 0;\r\n\r\n    -webkit-animation-name: account_arrow;\r\n\r\n            animation-name: account_arrow;\r\n    -webkit-animation-duration: 0.3s;\r\n            animation-duration: 0.3s;\r\n}\r\n\r\n@-webkit-keyframes account_dropdown {\r\n    0% {\r\n        width: 0px;\r\n        height: 0px;\r\n    }\r\n    100% {\r\n        width: 270px;\r\n        height: 230px;\r\n    }\r\n}\r\n\r\n@keyframes account_dropdown {\r\n    0% {\r\n        width: 0px;\r\n        height: 0px;\r\n    }\r\n    100% {\r\n        width: 270px;\r\n        height: 230px;\r\n    }\r\n}\r\n\r\n@-webkit-keyframes account_arrow {\r\n    0% {\r\n        width: 0px;\r\n        height: 0px;\r\n    }\r\n    100% {\r\n        width: 10px;\r\n        height: 10px;\r\n    }\r\n}\r\n\r\n@keyframes account_arrow {\r\n    0% {\r\n        width: 0px;\r\n        height: 0px;\r\n    }\r\n    100% {\r\n        width: 10px;\r\n        height: 10px;\r\n    }\r\n}\r\n", ""]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/components/Navbar/Account/DropdownUser/Logout/Logout.css":
+/*!*****************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/components/Navbar/Account/DropdownUser/Logout/Logout.css ***!
+  \*****************************************************************************************************************************************************************************************************************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
+// Imports
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, ".btn-account_logout {\r\n    width: 235px;\r\n    height: 40px;\r\n    background-color: #fdd835;\r\n    border: none;\r\n    border-radius: 4px;\r\n\r\n    position: absolute;\r\n    top: 20px;\r\n    left: 50%;\r\n    transform: translateX(-50%);\r\n    z-index: 10;\r\n\r\n    color: #4a4a4a;\r\n    font-weight: bold;\r\n\r\n    transform-origin: 0 0;\r\n\r\n    -webkit-animation-name: account_logout;\r\n\r\n            animation-name: account_logout;\r\n    -webkit-animation-duration: 0.3s;\r\n            animation-duration: 0.3s;\r\n}\r\n\r\n@-webkit-keyframes account_logout {\r\n    0% {\r\n        width: 0;\r\n        height: 0;\r\n    }\r\n    100% {\r\n        width: 235px;\r\n        height: 40px;\r\n    }\r\n}\r\n\r\n@keyframes account_logout {\r\n    0% {\r\n        width: 0;\r\n        height: 0;\r\n    }\r\n    100% {\r\n        width: 235px;\r\n        height: 40px;\r\n    }\r\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -89744,6 +89871,66 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_Account_css__WEBPACK_IMPORTED_MODULE_1__.default.locals || {});
+
+/***/ }),
+
+/***/ "./resources/js/components/Navbar/Account/DropdownUser/DropdownUser.css":
+/*!******************************************************************************!*\
+  !*** ./resources/js/components/Navbar/Account/DropdownUser/DropdownUser.css ***!
+  \******************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_DropdownUser_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../../../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!../../../../../../node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./DropdownUser.css */ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/components/Navbar/Account/DropdownUser/DropdownUser.css");
+
+            
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_DropdownUser_css__WEBPACK_IMPORTED_MODULE_1__.default, options);
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_DropdownUser_css__WEBPACK_IMPORTED_MODULE_1__.default.locals || {});
+
+/***/ }),
+
+/***/ "./resources/js/components/Navbar/Account/DropdownUser/Logout/Logout.css":
+/*!*******************************************************************************!*\
+  !*** ./resources/js/components/Navbar/Account/DropdownUser/Logout/Logout.css ***!
+  \*******************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../../../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_Logout_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../../../../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!../../../../../../../node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./Logout.css */ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/components/Navbar/Account/DropdownUser/Logout/Logout.css");
+
+            
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_Logout_css__WEBPACK_IMPORTED_MODULE_1__.default, options);
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_Logout_css__WEBPACK_IMPORTED_MODULE_1__.default.locals || {});
 
 /***/ }),
 
