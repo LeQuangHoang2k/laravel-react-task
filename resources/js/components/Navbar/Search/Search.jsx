@@ -22,7 +22,7 @@ function Search(props) {
         //res
 
         console.log("name: " + name);
-        window.location.href=`/?search=${name}`;
+        window.location.href=`/?name=${name}`;
     };
 
     const checkRequest = () => {

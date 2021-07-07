@@ -6,7 +6,7 @@ import "./Product.css";
 function Product(props) {
     const [products, setProducts] = useState([]);
 
-    const { search } = queryString.parse(window.location.search);
+    const { name } = queryString.parse(window.location.search);
 
     useEffect(() => {
         fetchProduct();
@@ -15,9 +15,9 @@ function Product(props) {
     const fetchProduct = async () => {
         var res = null;
 
-        if (search && search !== "") {
-            res = await axios.post("/api/search-product", { search });
-            console.log("search là: ", search);
+        if (name && name !== "") {
+            res = await axios.post("/api/search-product", { name });
+            console.log("name là: ", name);
         } else {
             res = await axios.post("/api/show-product");
         }
@@ -37,7 +37,7 @@ function Product(props) {
                 return (
                     <a
                         key={item.ProductID}
-                        href={`/detail/${item.ProductName}`} 
+                        href={`/detail/${item.ProductName}`}
                         className="product_wrapper"
                     >
                         <div className="product_content">

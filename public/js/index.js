@@ -8173,7 +8173,7 @@ function Product(props) {
       setProducts = _useState2[1];
 
   var _queryString$parse = query_string__WEBPACK_IMPORTED_MODULE_2__.parse(window.location.search),
-      search = _queryString$parse.search;
+      name = _queryString$parse.name;
 
   (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
     fetchProduct();
@@ -8189,19 +8189,19 @@ function Product(props) {
             case 0:
               res = null;
 
-              if (!(search && search !== "")) {
+              if (!(name && name !== "")) {
                 _context.next = 8;
                 break;
               }
 
               _context.next = 4;
               return axios.post("/api/search-product", {
-                search: search
+                name: name
               });
 
             case 4:
               res = _context.sent;
-              console.log("search là: ", search);
+              console.log("name là: ", name);
               _context.next = 11;
               break;
 
@@ -9467,7 +9467,7 @@ function Search(props) {
               //res
 
               console.log("name: " + name);
-              window.location.href = "/?search=".concat(name);
+              window.location.href = "/?name=".concat(name);
 
             case 8:
             case "end":

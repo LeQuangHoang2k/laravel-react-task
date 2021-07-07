@@ -24,7 +24,7 @@ class ProductController extends Controller
 
         if($this->checkRequest($request) !=="Valid") return response()->json(['message' => "Error: ".$checkRequest]);
 
-        $Product =DB::table('Product')->where('ProductName', 'like', '%'.$request->search.'%')->get();
+        $Product =DB::table('Product')->where('ProductName', 'like', '%'.$request->name.'%')->get();
 
         return response()->json([
             "message"=>"ok",
@@ -42,7 +42,7 @@ class ProductController extends Controller
 
     public function validName($request){
         
-        $match = preg_match("/[a-zA-Z0-9]/",$request->search);
+        $match = preg_match("/[a-zA-Z0-9]/",$request->name);
         
         return $match;
 
