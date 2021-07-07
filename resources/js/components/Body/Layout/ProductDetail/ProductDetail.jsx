@@ -1,8 +1,46 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import queryString from "query-string";
 
 import "./ProductDetail.css";
 
 function ProductDetail(props) {
+    const [products, setProducts] = useState([]);
+
+    const { product_id } = queryString.parse(window.location.search);
+
+    useEffect(() => {
+        fetchProduct();
+
+        return () => {
+            setProducts([]);
+        };
+    }, []);
+
+    const fetchProduct = async () => {
+        var res = null;
+
+        alert("1");
+        if (product_id && product_id !== "") {
+            alert("2");
+            console.log("product_id là: ", product_id);
+
+            res = await axios.post("/api/search-product-detail", {
+                product_id,
+            });
+        } else {
+            res = await axios.post("/api/show-product");
+        }
+
+        const { data } = await res;
+        // return;
+
+        console.log("php: ", data);
+
+        console.log(data);
+
+        setProducts(data.product);
+    };
+
     return (
         <div>
             <div className="productDetail_left">
@@ -58,7 +96,9 @@ function ProductDetail(props) {
                     </button>
                 </div>
 
-                <button type="button" className="option_final">Add to Cart</button>
+                <button type="button" className="option_final">
+                    Add to Cart
+                </button>
             </div>
         </div>
     );

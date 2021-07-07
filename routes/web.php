@@ -5,6 +5,7 @@ use App\Http\Controllers\api\GoogleController;
 use App\Http\Controllers\api\LoginController;
 use App\Http\Controllers\api\ProductController;
 use App\Http\Controllers\api\RegisterController;
+use App\Http\Controllers\api\ProductDetailController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -29,4 +30,6 @@ Route::post('/api/login-google', [GoogleController::class, 'login']);
 
 Route::post('/api/show-product', [ProductController::class, 'show']);
 Route::post('/api/search-product', [ProductController::class, 'search']);
+Route::post('/api/search-product-detail', [ProductDetailController::class, 'searchByID']);
+
 

@@ -41,7 +41,7 @@ function Product(props) {
                 return (
                     <a
                         key={item.ProductID}
-                        href={`/?product_name=${item.ProductName}`}
+                        href={`/?product_id=${item.ProductID}`}
                         className="product_wrapper"
                     >
                         <div className="product_content">
