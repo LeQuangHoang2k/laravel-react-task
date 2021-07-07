@@ -18,8 +18,6 @@ function ProductDetail(props) {
                 </div>
                 <div className="productDetail_right_price">25.990.000 ₫</div>
 
-                <p>Color:</p>
-                
                 <div className="productDetail_right_color">
                     <div className="option_color">
                         <img
@@ -38,8 +36,6 @@ function ProductDetail(props) {
                         <span className="option_text">Silver</span>
                     </div>
                 </div>
-
-                <p>Memory:</p>
 
                 <div className="productDetail_right_ram">
                     <button type="button" className="option_ram">
@@ -61,6 +57,8 @@ function ProductDetail(props) {
                         +
                     </button>
                 </div>
+
+                <button type="button" className="option_final">Add to Cart</button>
             </div>
         </div>
     );

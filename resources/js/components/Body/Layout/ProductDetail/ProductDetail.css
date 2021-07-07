@@ -37,6 +37,7 @@
     height: 40px;
     /* background-color: red; */
 
+    position: relative;
     margin-top: 15px;
     margin-left: 20px;
 
@@ -144,6 +145,23 @@
 .option_increase:active,
 .option_decrease:active {
     border-color: rgb(1, 127, 255);
+}
+
+/* ///////////////////////////////////////////////////// */
+
+.option_final {
+    width: 240px;
+    height: 50px;
+    background-color: #ff3945;
+    border: none;
+    border-radius: 5px;
+
+    position: relative;
+    margin-top: 60px;
+    margin-left: 20px;
+
+    color: white;
+    font-weight: bold;
 }
 
 /* .productDetail_wrapper {
