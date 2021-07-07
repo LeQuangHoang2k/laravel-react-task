@@ -9464,17 +9464,7 @@ function Search(props) {
 
             case 5:
               console.log(checkRequest()); //db
-              // const res = await axios.post("/api/search-product", formData);
-              // const { data } = await res;
-              // alert("Notification : " + data.message);
-              // console.log("php: ", data);
-              //main
               //res
-              // if(!data || !data.product) return;
-              // localStorage.setItem("product",JSON.stringify(data.product));
-              // let a= localStorage.getItem("product");
-              // a = JSON.parse(a)
-              // console.log(a);
 
               console.log("name: " + name);
               window.location.href = "/?search=".concat(name);
