@@ -10,6 +10,10 @@ function Product(props) {
 
     useEffect(() => {
         fetchProduct();
+
+        return () => {
+            setProducts([]);
+        };
     }, []);
 
     const fetchProduct = async () => {
@@ -37,7 +41,7 @@ function Product(props) {
                 return (
                     <a
                         key={item.ProductID}
-                        href={`/detail/${item.ProductName}`}
+                        href={`/?product_name=${item.ProductName}`}
                         className="product_wrapper"
                     >
                         <div className="product_content">
