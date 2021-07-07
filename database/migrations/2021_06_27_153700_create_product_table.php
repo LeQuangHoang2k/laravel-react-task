@@ -17,6 +17,7 @@ class CreateProductTable extends Migration
             $table->integer("ProductID")->autoIncrement();
             $table->string("ProductCategory");
             $table->string("ProductName");
+            $table->string("ProductPictureURL");
             $table->text("ProductDescription");   
             $table->decimal('PriceDefault', $precision = 15, $scale = 3);
             $table->integer("ProductPriority");
