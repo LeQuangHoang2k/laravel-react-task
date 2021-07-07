@@ -28,3 +28,5 @@ Route::post('/api/login-facebook', [FacebookController::class, 'login']);
 Route::post('/api/login-google', [GoogleController::class, 'login']);
 
 Route::post('/api/show-product', [ProductController::class, 'show']);
+Route::post('/api/search-product', [ProductController::class, 'search']);
+

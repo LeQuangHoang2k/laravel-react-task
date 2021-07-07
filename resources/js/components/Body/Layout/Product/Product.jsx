@@ -1,16 +1,26 @@
 import React, { useEffect, useState } from "react";
+import queryString from "query-string";
 
 import "./Product.css";
 
 function Product(props) {
     const [products, setProducts] = useState([]);
 
+    const { search } = queryString.parse(window.location.search);
+
     useEffect(() => {
         fetchProduct();
     }, []);
 
     const fetchProduct = async () => {
-        const res = await axios.post("/api/show-product");
+        var res = null;
+
+        if (search && search !== "") {
+            res = await axios.post("/api/search-product", { search });
+            console.log("search là: ", search);
+        } else {
+            res = await axios.post("/api/show-product");
+        }
 
         const { data } = await res;
 
@@ -23,20 +33,19 @@ function Product(props) {
 
     return (
         <div>
-
             {products.map((item) => {
                 return (
                     <a
-                    key={item.ProductID}
-                    href="abc"
-                    className="product_wrapper"
+                        key={item.ProductID}
+                        href="abc"
+                        className="product_wrapper"
                     >
                         <div className="product_content">
                             <img
                                 src={item.ProductPictureURL}
                                 className="product_image"
                                 alt="Image"
-                                />
+                            />
 
                             <span className="product_title">
                                 {item.ProductName}
@@ -53,10 +62,13 @@ function Product(props) {
 
                             <div>
                                 <span className="product_price">
-                                    {parseInt(item.PriceDefault).toLocaleString("it-IT", {
-                                        style: "currency",
-                                        currency: "VND",
-                                    })}
+                                    {parseInt(item.PriceDefault).toLocaleString(
+                                        "it-IT",
+                                        {
+                                            style: "currency",
+                                            currency: "VND",
+                                        }
+                                    )}
                                 </span>
                                 &nbsp;
                                 <span className="product_discount">-69%</span>
