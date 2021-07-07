@@ -3,6 +3,7 @@
 use App\Http\Controllers\api\FacebookController;
 use App\Http\Controllers\api\GoogleController;
 use App\Http\Controllers\api\LoginController;
+use App\Http\Controllers\api\ProductController;
 use App\Http\Controllers\api\RegisterController;
 use Illuminate\Support\Facades\Route;
 
@@ -26,5 +27,4 @@ Route::post('/api/login', [LoginController::class, 'login']);
 Route::post('/api/login-facebook', [FacebookController::class, 'login']);
 Route::post('/api/login-google', [GoogleController::class, 'login']);
 
-
-
+Route::post('/api/show-product', [ProductController::class, 'show']);
