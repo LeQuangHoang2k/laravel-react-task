@@ -4,23 +4,36 @@ import queryString from "query-string";
 import "./ProductDetail.css";
 
 function ProductDetail(props) {
-    const [products, setProducts] = useState([]);
+    const [product, setProduct] = useState([]);
     const [options, setOptions] = useState([]);
+    const [cart, setCart] = useState(
+        JSON.parse(localStorage.getItem("cart")) || []
+    );
 
+    const [optionID, setOptionID] = useState(0);
     const [price, setPrice] = useState(0);
     const [count, setCount] = useState(0);
 
     const { product_id } = queryString.parse(window.location.search);
 
+    var formData = {
+        productID: product.ProductID,
+        price,
+        count,
+        optionID,
+    };
+
     useEffect(() => {
         fetchProduct();
 
         return () => {
-            setProducts([]);
+            setProduct([]);
             setOptions([]);
+            setCart([]);
 
             setPrice(0);
             setCount(0);
+            setOptionID(0);
         };
     }, []);
 
@@ -46,7 +59,7 @@ function ProductDetail(props) {
 
         console.log(data);
 
-        setProducts(data.product);
+        setProduct(data.product);
         setOptions(data.option);
 
         setPrice(data.product.PriceDefault);
@@ -56,6 +69,7 @@ function ProductDetail(props) {
         // alert("alo");
 
         setPrice(item.OptionPrice);
+        setOptionID(item.OptionID);
     };
 
     const countIncrease = (item) => {
@@ -70,6 +84,17 @@ function ProductDetail(props) {
         setCount(count - 1);
     };
 
+    const addCart = () => {
+        alert("hello");
+
+        if (price <= 0 || count <= 0 || optionID <= 0)
+            return alert("Can't add to cart");
+
+        console.log(formData);
+        if (!cart || cart === []) {
+        }
+    };
+
     return (
         <div>
             <div className="productDetail_left">
@@ -82,7 +107,7 @@ function ProductDetail(props) {
             <div className="productDetail_right">
                 <div className="productDetail_right_title">
                     {/* Điện Thoại iPhone 12 Pro 128GB - Hàng Chính Hãng */}
-                    {products.ProductName}
+                    {product.ProductName}
                 </div>
                 <div className="productDetail_right_price">
                     {parseInt(price).toLocaleString("it-IT", {
@@ -145,7 +170,11 @@ function ProductDetail(props) {
                     </button>
                 </div>
 
-                <button type="button" className="option_final">
+                <button
+                    type="button"
+                    className="option_final"
+                    onClick={addCart}
+                >
                     Add to Cart
                 </button>
             </div>

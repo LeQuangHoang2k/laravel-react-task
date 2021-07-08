@@ -8205,34 +8205,52 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 function ProductDetail(props) {
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)([]),
       _useState2 = _slicedToArray(_useState, 2),
-      products = _useState2[0],
-      setProducts = _useState2[1];
+      product = _useState2[0],
+      setProduct = _useState2[1];
 
   var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)([]),
       _useState4 = _slicedToArray(_useState3, 2),
       options = _useState4[0],
       setOptions = _useState4[1];
 
-  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(0),
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(JSON.parse(localStorage.getItem("cart")) || []),
       _useState6 = _slicedToArray(_useState5, 2),
-      price = _useState6[0],
-      setPrice = _useState6[1];
+      cart = _useState6[0],
+      setCart = _useState6[1];
 
   var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(0),
       _useState8 = _slicedToArray(_useState7, 2),
-      count = _useState8[0],
-      setCount = _useState8[1];
+      optionID = _useState8[0],
+      setOptionID = _useState8[1];
+
+  var _useState9 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(0),
+      _useState10 = _slicedToArray(_useState9, 2),
+      price = _useState10[0],
+      setPrice = _useState10[1];
+
+  var _useState11 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(0),
+      _useState12 = _slicedToArray(_useState11, 2),
+      count = _useState12[0],
+      setCount = _useState12[1];
 
   var _queryString$parse = query_string__WEBPACK_IMPORTED_MODULE_2__.parse(window.location.search),
       product_id = _queryString$parse.product_id;
 
+  var formData = {
+    productID: product.ProductID,
+    price: price,
+    count: count,
+    optionID: optionID
+  };
   (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
     fetchProduct();
     return function () {
-      setProducts([]);
+      setProduct([]);
       setOptions([]);
+      setCart([]);
       setPrice(0);
       setCount(0);
+      setOptionID(0);
     };
   }, []);
 
@@ -8280,7 +8298,7 @@ function ProductDetail(props) {
               // return;
               console.log("php: ", data);
               console.log(data);
-              setProducts(data.product);
+              setProduct(data.product);
               setOptions(data.option);
               setPrice(data.product.PriceDefault);
 
@@ -8300,6 +8318,7 @@ function ProductDetail(props) {
   var updateProduct = function updateProduct(item) {
     // alert("alo");
     setPrice(item.OptionPrice);
+    setOptionID(item.OptionID);
   };
 
   var countIncrease = function countIncrease(item) {
@@ -8310,6 +8329,14 @@ function ProductDetail(props) {
   var countDecrease = function countDecrease(item) {
     if (count === 0) return alert("Can't decrease");
     setCount(count - 1);
+  };
+
+  var addCart = function addCart() {
+    alert("hello");
+    if (price <= 0 || count <= 0 || optionID <= 0) return alert("Can't add to cart");
+    console.log(formData);
+
+    if (!cart || cart === []) {}
   };
 
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
@@ -8324,7 +8351,7 @@ function ProductDetail(props) {
       className: "productDetail_right",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
         className: "productDetail_right_title",
-        children: products.ProductName
+        children: product.ProductName
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
         className: "productDetail_right_price",
         children: parseInt(price).toLocaleString("it-IT", {
@@ -8364,6 +8391,7 @@ function ProductDetail(props) {
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
         type: "button",
         className: "option_final",
+        onClick: addCart,
         children: "Add to Cart"
       })]
     })]
