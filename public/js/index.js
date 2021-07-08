@@ -8226,38 +8226,37 @@ function ProductDetail(props) {
         while (1) {
           switch (_context.prev = _context.next) {
             case 0:
-              res = null;
-              alert("1");
+              res = null; // alert("1");
 
               if (!(product_id && product_id !== "")) {
-                _context.next = 10;
+                _context.next = 8;
                 break;
               }
 
-              alert("2");
+              // alert("2");
               console.log("product_id là: ", product_id);
-              _context.next = 7;
+              _context.next = 5;
               return axios.post("/api/search-product-detail", {
                 product_id: product_id
               });
 
-            case 7:
+            case 5:
               res = _context.sent;
-              _context.next = 13;
+              _context.next = 11;
               break;
 
-            case 10:
-              _context.next = 12;
+            case 8:
+              _context.next = 10;
               return axios.post("/api/show-product");
 
-            case 12:
+            case 10:
               res = _context.sent;
 
-            case 13:
-              _context.next = 15;
+            case 11:
+              _context.next = 13;
               return res;
 
-            case 15:
+            case 13:
               _yield$res = _context.sent;
               data = _yield$res.data;
               // return;
@@ -8265,7 +8264,7 @@ function ProductDetail(props) {
               console.log(data);
               setProducts(data.product);
 
-            case 20:
+            case 18:
             case "end":
               return _context.stop();
           }

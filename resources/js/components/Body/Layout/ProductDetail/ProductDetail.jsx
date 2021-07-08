@@ -19,9 +19,9 @@ function ProductDetail(props) {
     const fetchProduct = async () => {
         var res = null;
 
-        alert("1");
+        // alert("1");
         if (product_id && product_id !== "") {
-            alert("2");
+            // alert("2");
             console.log("product_id là: ", product_id);
 
             res = await axios.post("/api/search-product-detail", {

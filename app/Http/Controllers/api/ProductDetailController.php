@@ -11,15 +11,24 @@ class ProductDetailController extends Controller
     //
     public function searchByID(Request $request){
 
+        //input
         $checkRequest= $this->checkRequest($request);
 
         if($this->checkRequest($request) !=="Valid") return response()->json(['message' => "Error: ".$checkRequest]);
 
+        //db
+        
+        //main
+
         $Product =DB::table('Product')->where('ProductID', $request->product_id)->get();
+        $ProductOption =DB::table('ProductOption')->where('ProductID', $request->product_id)->get();
+
+        //res
 
         return response()->json([
             "message"=>"ok",
             "product"=> $Product[0],
+            "productOption"=> $ProductOption,
         ]);
     }
 

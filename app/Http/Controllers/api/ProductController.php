@@ -20,12 +20,20 @@ class ProductController extends Controller
     }
 
     public function search(Request $request){
-        $checkRequest= $this->checkRequest($request);
 
+        //input
+        
+        $checkRequest= $this->checkRequest($request);
         if($this->checkRequest($request) !=="Valid") return response()->json(['message' => "Error: ".$checkRequest]);
+
+        //db
+
+        //main
 
         $Product =DB::table('Product')->where('ProductName', 'like', '%'.$request->name.'%')->get();
 
+        //res
+        
         return response()->json([
             "message"=>"ok",
             "product"=> $Product,
