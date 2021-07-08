@@ -43,5 +43,9 @@ values ("1","iphone 12","https://cdn.tgdd.vn/Products/Images/42/213031/iphone-12
 insert into product (ProductCategory,ProductName,ProductPictureURL,ProductDescription,PriceDefault,ProductPriority) 
 values ("1","iphone 12","https://cdn.tgdd.vn/Products/Images/42/213031/iphone-12-den-200x200.png","iphone xach tay",19000000.1,1);
 
+--1:den 2:trang
 insert into productimage (ProductID,ProductImagePath) values(1,"https://salt.tikicdn.com/cache/w444/ts/product/86/dd/0c/8948ec0e37381d80d7daf5f8c24062ed.jpg");
 insert into productimage (ProductID,ProductImagePath) values(1,"https://salt.tikicdn.com/cache/w444/ts/product/27/55/4e/de17f04656c5cbfd86eb49dbbfb3fe3a.jpg");
+
+insert into productoption (ProductID,OptionTitle,OptionValue,OptionPrice) values(1,"ram","64gb",19000000);
+insert into productoption (ProductID,OptionTitle,OptionValue,OptionPrice) values(1,"ram","128gb",22000000);

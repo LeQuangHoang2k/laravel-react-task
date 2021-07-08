@@ -16,7 +16,9 @@ class CreateProductOptionTable extends Migration
         Schema::create('ProductOption', function (Blueprint $table) {
             $table->integer("OptionID")->autoIncrement();
             $table->integer("ProductID");
-            $table->string("ProductImagePath");
+            $table->string("OptionTitle");
+            $table->string("OptionValue");
+            $table->decimal('OptionPrice', $precision = 15, $scale = 3);
 
             $table->foreign('ProductID')->references('ProductID')->on('Product');
             

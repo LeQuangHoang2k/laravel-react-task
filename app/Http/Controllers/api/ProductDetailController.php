@@ -15,11 +15,11 @@ class ProductDetailController extends Controller
 
         if($this->checkRequest($request) !=="Valid") return response()->json(['message' => "Error: ".$checkRequest]);
 
-        // $Product =DB::table('Product')->where('ProductName', 'like', '%'.$request->name.'%')->get();
+        $Product =DB::table('Product')->where('ProductID', $request->product_id)->get();
 
         return response()->json([
             "message"=>"ok",
-            // "product"=> $Product,
+            "product"=> $Product[0],
         ]);
     }
 

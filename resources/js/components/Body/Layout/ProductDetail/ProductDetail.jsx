@@ -52,11 +52,17 @@ function ProductDetail(props) {
             </div>
             <div className="productDetail_right">
                 <div className="productDetail_right_title">
-                    Điện Thoại iPhone 12 Pro 128GB - Hàng Chính Hãng
+                    {/* Điện Thoại iPhone 12 Pro 128GB - Hàng Chính Hãng */}
+                    {products.ProductName}
                 </div>
-                <div className="productDetail_right_price">25.990.000 ₫</div>
+                <div className="productDetail_right_price">
+                    {parseInt(products.PriceDefault).toLocaleString("it-IT", {
+                        style: "currency",
+                        currency: "VND",
+                    })}
+                </div>
 
-                <div className="productDetail_right_color">
+                {/* <div className="productDetail_right_color">
                     <div className="option_color">
                         <img
                             src="https://salt.tikicdn.com/cache/w444/ts/product/86/dd/0c/8948ec0e37381d80d7daf5f8c24062ed.jpg"
@@ -73,7 +79,7 @@ function ProductDetail(props) {
                         />
                         <span className="option_text">Silver</span>
                     </div>
-                </div>
+                </div> */}
 
                 <div className="productDetail_right_ram">
                     <button type="button" className="option_ram">
