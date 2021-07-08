@@ -28,7 +28,7 @@ class ProductDetailController extends Controller
         return response()->json([
             "message"=>"ok",
             "product"=> $Product[0],
-            "productOption"=> $ProductOption,
+            "option"=> $ProductOption,
         ]);
     }
 

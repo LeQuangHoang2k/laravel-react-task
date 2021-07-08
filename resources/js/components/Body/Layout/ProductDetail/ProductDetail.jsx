@@ -5,6 +5,10 @@ import "./ProductDetail.css";
 
 function ProductDetail(props) {
     const [products, setProducts] = useState([]);
+    const [options, setOptions] = useState([]);
+
+    const [price, setPrice] = useState(0);
+    const [count, setCount] = useState(0);
 
     const { product_id } = queryString.parse(window.location.search);
 
@@ -13,6 +17,10 @@ function ProductDetail(props) {
 
         return () => {
             setProducts([]);
+            setOptions([]);
+
+            setPrice(0);
+            setCount(0);
         };
     }, []);
 
@@ -39,6 +47,27 @@ function ProductDetail(props) {
         console.log(data);
 
         setProducts(data.product);
+        setOptions(data.option);
+
+        setPrice(data.product.PriceDefault);
+    };
+
+    const updateProduct = (item) => {
+        // alert("alo");
+
+        setPrice(item.OptionPrice);
+    };
+
+    const countIncrease = (item) => {
+        // alert("alo");
+
+        setCount(count + 1);
+    };
+
+    const countDecrease = (item) => {
+        if (count === 0) return alert("Can't decrease");
+
+        setCount(count - 1);
     };
 
     return (
@@ -56,7 +85,7 @@ function ProductDetail(props) {
                     {products.ProductName}
                 </div>
                 <div className="productDetail_right_price">
-                    {parseInt(products.PriceDefault).toLocaleString("it-IT", {
+                    {parseInt(price).toLocaleString("it-IT", {
                         style: "currency",
                         currency: "VND",
                     })}
@@ -82,22 +111,36 @@ function ProductDetail(props) {
                 </div> */}
 
                 <div className="productDetail_right_ram">
-                    <button type="button" className="option_ram">
-                        64GB
-                    </button>
-                    <button type="button" className="option_ram">
-                        128GB
-                    </button>
+                    {options.map((item) => {
+                        return (
+                            <button
+                                key={item.OptionID}
+                                type="button"
+                                className="option_ram"
+                                onClick={() => updateProduct(item)}
+                            >
+                                {item.OptionValue}
+                            </button>
+                        );
+                    })}
                 </div>
 
                 <div className="option_amount">
                     <p>Amount:</p>
 
-                    <button type="button" className="option_decrease">
+                    <button
+                        type="button"
+                        className="option_decrease"
+                        onClick={countDecrease}
+                    >
                         -
                     </button>
-                    <button className="option_count"> 0 </button>
-                    <button type="button" className="option_increase">
+                    <button className="option_count"> {count} </button>
+                    <button
+                        type="button"
+                        className="option_increase"
+                        onClick={countIncrease}
+                    >
                         +
                     </button>
                 </div>

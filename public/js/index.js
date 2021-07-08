@@ -8208,6 +8208,21 @@ function ProductDetail(props) {
       products = _useState2[0],
       setProducts = _useState2[1];
 
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)([]),
+      _useState4 = _slicedToArray(_useState3, 2),
+      options = _useState4[0],
+      setOptions = _useState4[1];
+
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(0),
+      _useState6 = _slicedToArray(_useState5, 2),
+      price = _useState6[0],
+      setPrice = _useState6[1];
+
+  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(0),
+      _useState8 = _slicedToArray(_useState7, 2),
+      count = _useState8[0],
+      setCount = _useState8[1];
+
   var _queryString$parse = query_string__WEBPACK_IMPORTED_MODULE_2__.parse(window.location.search),
       product_id = _queryString$parse.product_id;
 
@@ -8215,6 +8230,9 @@ function ProductDetail(props) {
     fetchProduct();
     return function () {
       setProducts([]);
+      setOptions([]);
+      setPrice(0);
+      setCount(0);
     };
   }, []);
 
@@ -8263,8 +8281,10 @@ function ProductDetail(props) {
               console.log("php: ", data);
               console.log(data);
               setProducts(data.product);
+              setOptions(data.option);
+              setPrice(data.product.PriceDefault);
 
-            case 18:
+            case 20:
             case "end":
               return _context.stop();
           }
@@ -8276,6 +8296,21 @@ function ProductDetail(props) {
       return _ref.apply(this, arguments);
     };
   }();
+
+  var updateProduct = function updateProduct(item) {
+    // alert("alo");
+    setPrice(item.OptionPrice);
+  };
+
+  var countIncrease = function countIncrease(item) {
+    // alert("alo");
+    setCount(count + 1);
+  };
+
+  var countDecrease = function countDecrease(item) {
+    if (count === 0) return alert("Can't decrease");
+    setCount(count - 1);
+  };
 
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
@@ -8292,21 +8327,22 @@ function ProductDetail(props) {
         children: products.ProductName
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
         className: "productDetail_right_price",
-        children: parseInt(products.PriceDefault).toLocaleString("it-IT", {
+        children: parseInt(price).toLocaleString("it-IT", {
           style: "currency",
           currency: "VND"
         })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
         className: "productDetail_right_ram",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
-          type: "button",
-          className: "option_ram",
-          children: "64GB"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
-          type: "button",
-          className: "option_ram",
-          children: "128GB"
-        })]
+        children: options.map(function (item) {
+          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
+            type: "button",
+            className: "option_ram",
+            onClick: function onClick() {
+              return updateProduct(item);
+            },
+            children: item.OptionValue
+          }, item.OptionID);
+        })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
         className: "option_amount",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
@@ -8314,13 +8350,15 @@ function ProductDetail(props) {
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
           type: "button",
           className: "option_decrease",
+          onClick: countDecrease,
           children: "-"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("button", {
           className: "option_count",
-          children: " 0 "
+          children: [" ", count, " "]
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
           type: "button",
           className: "option_increase",
+          onClick: countIncrease,
           children: "+"
         })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
@@ -14421,7 +14459,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".productDetail_left {\r\n    width: 500px;\r\n    height: 500px;\r\n    background-color: white;\r\n    box-shadow: 2px 0 2px -2px silver;\r\n\r\n    position: relative;\r\n    z-index: 5px;\r\n\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n\r\n    float: left;\r\n}\r\n/* ///////////////////////////////// */\r\n.productDetail_right {\r\n    width: 750px;\r\n    height: 500px;\r\n    background-color: white;\r\n\r\n    float: right;\r\n}\r\n\r\n.productDetail_right_title {\r\n    width: 615px;\r\n    height: 35px;\r\n\r\n    margin-top: 30px;\r\n    margin-left: 20px;\r\n\r\n    font-size: 24px;\r\n}\r\n\r\n.productDetail_right_price {\r\n    width: 615px;\r\n    height: 40px;\r\n    /* background-color: red; */\r\n\r\n    position: relative;\r\n    margin-top: 15px;\r\n    margin-left: 20px;\r\n\r\n    font-size: 32px;\r\n    font-weight: bold;\r\n}\r\n\r\n/* ///////////////////////////////////////////////////// */\r\n\r\n.productDetail_right_color {\r\n    width: 500px;\r\n    height: 70px;\r\n\r\n    margin-top: 15px;\r\n    margin-left: 20px;\r\n\r\n    /* font-size: 32px;\r\n    font-weight: bold; */\r\n}\r\n\r\n.option_color {\r\n    width: 150px;\r\n    height: 70px;\r\n    background-color: rgb(242, 242, 242);\r\n    border-radius: 10px;\r\n\r\n    position: relative;\r\n    margin-top: 20px;\r\n    margin-right: 20px;\r\n    float: left;\r\n\r\n    display: flex;\r\n    align-items: center;\r\n\r\n    cursor: pointer;\r\n}\r\n\r\n.option_color:active {\r\n    background-color: rgb(1, 127, 255);\r\n}\r\n\r\n.option_picture {\r\n    width: 66px;\r\n    height: 66px;\r\n\r\n    margin-left: 3px;\r\n    margin-right: 5px;\r\n}\r\n\r\n.option_text {\r\n    font-weight: bold;\r\n}\r\n\r\n/* ///////////////////////////////////////////////////// */\r\n\r\n.productDetail_right_ram {\r\n    width: 500px; /* 85px */\r\n    height: 40px;\r\n    /* background-color: red; */\r\n\r\n    position: relative;\r\n    margin-top: 40px;\r\n    margin-left: 20px;\r\n}\r\n\r\n.option_ram {\r\n    width: 85px;\r\n    height: 40px;\r\n    background-color: rgb(242, 242, 242);\r\n    border: none;\r\n    border-radius: 5px;\r\n\r\n    position: relative;\r\n    margin-right: 15px;\r\n}\r\n\r\n.option_ram:active {\r\n    background-color: rgb(1, 127, 255);\r\n}\r\n\r\n/* ///////////////////////////////////////////////////// */\r\n\r\n.option_amount {\r\n    width: 100px;\r\n    height: 30px;\r\n\r\n    position: relative;\r\n    margin-top: 40px;\r\n    margin-left: 20px;\r\n}\r\n\r\n.option_count,\r\n.option_increase,\r\n.option_decrease {\r\n    width: 30px;\r\n    height: 30px;\r\n    background-color: white;\r\n    border: 1px solid silver;\r\n\r\n    font-weight: bold;\r\n    color: gray;\r\n}\r\n\r\n.option_count:active,\r\n.option_increase:active,\r\n.option_decrease:active {\r\n    border-color: rgb(1, 127, 255);\r\n}\r\n\r\n/* ///////////////////////////////////////////////////// */\r\n\r\n.option_final {\r\n    width: 240px;\r\n    height: 50px;\r\n    background-color: #ff3945;\r\n    border: none;\r\n    border-radius: 5px;\r\n\r\n    position: relative;\r\n    margin-top: 60px;\r\n    margin-left: 20px;\r\n\r\n    color: white;\r\n    font-weight: bold;\r\n}\r\n\r\n/* .productDetail_wrapper {\r\n    width: 250px;\r\n    height: 330px;\r\n    background-color: white;\r\n    /* \r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n\r\n    position: relative;\r\n    padding: 12px 16px;\r\n    float: left; \r\n} */\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".productDetail_left {\r\n    width: 500px;\r\n    height: 500px;\r\n    background-color: white;\r\n    box-shadow: 2px 0 2px -2px silver;\r\n\r\n    position: relative;\r\n    z-index: 5px;\r\n\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n\r\n    float: left;\r\n}\r\n/* ///////////////////////////////// */\r\n.productDetail_right {\r\n    width: 750px;\r\n    height: 500px;\r\n    background-color: white;\r\n\r\n    float: right;\r\n}\r\n\r\n.productDetail_right_title {\r\n    width: 615px;\r\n    height: 35px;\r\n\r\n    margin-top: 30px;\r\n    margin-left: 20px;\r\n\r\n    font-size: 24px;\r\n}\r\n\r\n.productDetail_right_price {\r\n    width: 615px;\r\n    height: 40px;\r\n    /* background-color: red; */\r\n\r\n    position: relative;\r\n    margin-top: 15px;\r\n    margin-left: 20px;\r\n\r\n    font-size: 32px;\r\n    font-weight: bold;\r\n}\r\n\r\n/* ///////////////////////////////////////////////////// */\r\n\r\n.productDetail_right_color {\r\n    width: 500px;\r\n    height: 70px;\r\n\r\n    margin-top: 15px;\r\n    margin-left: 20px;\r\n\r\n    /* font-size: 32px;\r\n    font-weight: bold; */\r\n}\r\n\r\n.option_color {\r\n    width: 150px;\r\n    height: 70px;\r\n    background-color: rgb(242, 242, 242);\r\n    border-radius: 10px;\r\n\r\n    position: relative;\r\n    margin-top: 20px;\r\n    margin-right: 20px;\r\n    float: left;\r\n\r\n    display: flex;\r\n    align-items: center;\r\n\r\n    cursor: pointer;\r\n}\r\n\r\n.option_color:active {\r\n    background-color: rgb(1, 127, 255);\r\n}\r\n\r\n.option_picture {\r\n    width: 66px;\r\n    height: 66px;\r\n\r\n    margin-left: 3px;\r\n    margin-right: 5px;\r\n}\r\n\r\n.option_text {\r\n    font-weight: bold;\r\n}\r\n\r\n/* ///////////////////////////////////////////////////// */\r\n\r\n.productDetail_right_ram {\r\n    width: 500px; /* 85px */\r\n    height: 40px;\r\n    /* background-color: red; */\r\n\r\n    position: relative;\r\n    margin-top: 40px;\r\n    margin-left: 20px;\r\n}\r\n\r\n.option_ram {\r\n    width: 85px;\r\n    height: 40px;\r\n    background-color: rgb(242, 242, 242);\r\n    border: none;\r\n    border-radius: 5px;\r\n\r\n    position: relative;\r\n    margin-right: 15px;\r\n}\r\n\r\n.option_ram:active {\r\n    background-color: rgb(1, 127, 255);\r\n}\r\n\r\n/* ///////////////////////////////////////////////////// */\r\n\r\n.option_amount {\r\n    width: 100px;\r\n    height: 30px;\r\n\r\n    position: relative;\r\n    margin-top: 40px;\r\n    margin-left: 20px;\r\n}\r\n\r\n.option_count,\r\n.option_increase,\r\n.option_decrease {\r\n    width: 30px;\r\n    height: 30px;\r\n    background-color: white;\r\n    border: 1px solid silver;\r\n\r\n    font-weight: bold;\r\n    color: gray;\r\n}\r\n\r\n.option_count:active,\r\n.option_increase:active,\r\n.option_decrease:active {\r\n    box-shadow: 0 0 2px 2px rgb(1, 127, 255);\r\n}\r\n\r\n/* ///////////////////////////////////////////////////// */\r\n\r\n.option_final {\r\n    width: 240px;\r\n    height: 50px;\r\n    background-color: #ff3945;\r\n    border: none;\r\n    border-radius: 5px;\r\n\r\n    position: relative;\r\n    margin-top: 60px;\r\n    margin-left: 20px;\r\n\r\n    color: white;\r\n    font-weight: bold;\r\n}\r\n\r\n/* .productDetail_wrapper {\r\n    width: 250px;\r\n    height: 330px;\r\n    background-color: white;\r\n    /* \r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n\r\n    position: relative;\r\n    padding: 12px 16px;\r\n    float: left; \r\n} */\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

@@ -144,7 +144,7 @@
 .option_count:active,
 .option_increase:active,
 .option_decrease:active {
-    border-color: rgb(1, 127, 255);
+    box-shadow: 0 0 2px 2px rgb(1, 127, 255);
 }
 
 /* ///////////////////////////////////////////////////// */
