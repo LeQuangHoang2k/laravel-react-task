@@ -18,13 +18,15 @@ function ProductDetail(props) {
 
     var formData = {
         productID: product.ProductID,
-        price,
+        price: price,
         count,
         optionID,
     };
 
     useEffect(() => {
         fetchProduct();
+
+        console.log("cart first: ", cart);
 
         return () => {
             setProduct([]);
@@ -34,6 +36,8 @@ function ProductDetail(props) {
             setPrice(0);
             setCount(0);
             setOptionID(0);
+
+            formData = {};
         };
     }, []);
 
@@ -90,9 +94,19 @@ function ProductDetail(props) {
         if (price <= 0 || count <= 0 || optionID <= 0)
             return alert("Can't add to cart");
 
-        console.log(formData);
-        if (!cart || cart === []) {
-        }
+        saveCart();
+    };
+
+    const saveCart = () => {
+        alert("save thành công");
+
+        console.log("formData: ", formData);
+        console.log("cart", cart);
+
+        cart.push({ a: formData });
+        localStorage.setItem("cart", JSON.stringify(cart));
+
+        console.log("cart", cart);
     };
 
     return (
@@ -183,3 +197,20 @@ function ProductDetail(props) {
 }
 
 export default ProductDetail;
+
+// const saveCart = () => {
+//     alert("abc");
+//     var newCart = [];
+//     console.log("formData: ", formData);
+//     console.log("cart", cart);
+
+//     if (!cart || cart.length < 1) {
+//         alert("xynz");
+
+//         newCart.push({a:formData});
+//         console.log("a", newCart);
+
+//         localStorage.setItem("cart", JSON.stringify(newCart));
+//     }
+//     // console.log();
+// };

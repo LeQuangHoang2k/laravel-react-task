@@ -8244,6 +8244,7 @@ function ProductDetail(props) {
   };
   (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
     fetchProduct();
+    console.log("cart first: ", cart);
     return function () {
       setProduct([]);
       setOptions([]);
@@ -8251,6 +8252,7 @@ function ProductDetail(props) {
       setPrice(0);
       setCount(0);
       setOptionID(0);
+      formData = {};
     };
   }, []);
 
@@ -8334,9 +8336,18 @@ function ProductDetail(props) {
   var addCart = function addCart() {
     alert("hello");
     if (price <= 0 || count <= 0 || optionID <= 0) return alert("Can't add to cart");
-    console.log(formData);
+    saveCart();
+  };
 
-    if (!cart || cart === []) {}
+  var saveCart = function saveCart() {
+    alert("save thành công");
+    console.log("formData: ", formData);
+    console.log("cart", cart);
+    cart.push({
+      a: formData
+    });
+    localStorage.setItem("cart", JSON.stringify(cart));
+    console.log("cart", cart);
   };
 
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
@@ -8398,7 +8409,19 @@ function ProductDetail(props) {
   });
 }
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ProductDetail);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ProductDetail); // const saveCart = () => {
+//     alert("abc");
+//     var newCart = [];
+//     console.log("formData: ", formData);
+//     console.log("cart", cart);
+//     if (!cart || cart.length < 1) {
+//         alert("xynz");
+//         newCart.push({a:formData});
+//         console.log("a", newCart);
+//         localStorage.setItem("cart", JSON.stringify(newCart));
+//     }
+//     // console.log();
+// };
 
 /***/ }),
 
