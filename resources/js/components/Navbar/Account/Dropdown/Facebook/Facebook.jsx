@@ -23,15 +23,15 @@ function Facebook(props) {
         //input
 
         //db
-        
+
         const res = await axios.post("/api/login-facebook", formData);
-        
+
         const { data } = await res;
-        
+
         alert("Notification : " + data.message);
-        
+
         console.log("php: ", data);
-        
+
         //main
 
         //res
@@ -43,7 +43,7 @@ function Facebook(props) {
 
         console.log(a);
 
-        window.location.href = "/";
+        window.location.reload();
     };
 
     const submit = () => {

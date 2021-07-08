@@ -8783,7 +8783,7 @@ __webpack_require__.r(__webpack_exports__);
 function Logout(props) {
   var submit = function submit() {
     localStorage.removeItem("account");
-    window.location.reload();
+    window.location.href = "/";
   };
 
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
@@ -8907,7 +8907,7 @@ function Facebook(props) {
               a = localStorage.getItem("account");
               a = JSON.parse(a);
               console.log(a);
-              window.location.href = "/";
+              window.location.reload();
 
             case 20:
             case "end":
@@ -9007,7 +9007,7 @@ function Google(props) {
               a = localStorage.getItem("account");
               a = JSON.parse(a);
               console.log(a);
-              window.location.href = "/";
+              window.location.reload();
 
             case 18:
             case "end":
@@ -9220,7 +9220,7 @@ function LoginModal(props) {
               a = localStorage.getItem("account");
               a = JSON.parse(a);
               console.log(a);
-              window.location.href = "/";
+              window.location.reload();
 
             case 20:
             case "end":

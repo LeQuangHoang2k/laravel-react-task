@@ -30,23 +30,23 @@ function LoginModal(props) {
         const { data } = await res;
 
         alert("Notification : " + data.message);
-        
+
         console.log("php: ", data);
 
         //main
 
         //res
 
-        if(!data || !data.account) return;
+        if (!data || !data.account) return;
 
-        localStorage.setItem("account",JSON.stringify(data.account));
-        let a= localStorage.getItem("account");
+        localStorage.setItem("account", JSON.stringify(data.account));
+        let a = localStorage.getItem("account");
 
-        a = JSON.parse(a)
+        a = JSON.parse(a);
 
         console.log(a);
-        
-        window.location.href="/";
+
+        window.location.reload();
     };
 
     const checkRequest = () => {

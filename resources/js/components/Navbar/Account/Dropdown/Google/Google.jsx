@@ -40,7 +40,7 @@ function Google(props) {
 
         console.log(a);
 
-        window.location.href = "/";
+        window.location.reload();
     };
 
     const googleFailure = (res) => {};

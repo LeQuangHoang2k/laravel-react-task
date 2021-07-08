@@ -7,7 +7,7 @@ function Logout(props) {
     const submit = () => {
         localStorage.removeItem("account");
 
-        window.location.reload();
+        window.location.href = "/";
     };
 
     return (
