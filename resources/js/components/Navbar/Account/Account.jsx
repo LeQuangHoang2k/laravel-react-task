@@ -6,12 +6,13 @@ import "./Account.css";
 import AccountIcon from "../../../../images/AccountIcon.png";
 import AccountArrow from "../../../../images/AccountArrow.png";
 import DropdownUser from "./DropdownUser/DropdownUser";
+import Alert from "../../../features/Alert";
 
 function Account(props) {
     const [account, setAccount] = useState(
         JSON.parse(localStorage.getItem("account")) || null
     );
-    
+
     const [accountImage, setAccountImage] = useState(AccountIcon);
     const [accountTitle, setAccountTitle] = useState("My Account");
 
@@ -23,9 +24,11 @@ function Account(props) {
 
     const updateAccountUI = () => {
         if (!account)
-            return alert(
-                "Vui lòng đăng nhập để nhận ưu đãi khi săn sale Tiki 7/7 nhé !"
-            );
+            return setTimeout(() => {
+                Alert(
+                    "Vui lòng đăng nhập để nhận ưu đãi khi săn sale Tiki 7/7 nhé !"
+                );
+            }, 2000);
 
         if (account.AccountPictureURL !== "")
             setAccountImage(account.AccountPictureURL);
@@ -35,11 +38,8 @@ function Account(props) {
             setAccountTitle(account.AccountEmail);
         }
 
-        setDropdownComponent(<DropdownUser />)
-
+        setDropdownComponent(<DropdownUser />);
     };
-
-
 
     return (
         <div className="account_wrapper">
@@ -51,7 +51,6 @@ function Account(props) {
                 <img src={AccountArrow} className="account_arrow" alt="Image" />
 
                 {dropdownComponent}
-                
             </div>
         </div>
     );
