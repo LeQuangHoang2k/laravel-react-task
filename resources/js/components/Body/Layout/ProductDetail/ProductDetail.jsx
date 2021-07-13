@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import queryString from "query-string";
 
 import "./ProductDetail.css";
+import Alert from "../../../../features/Alert";
 
 function ProductDetail(props) {
     const [product, setProduct] = useState([]);
@@ -44,9 +45,7 @@ function ProductDetail(props) {
     const fetchProduct = async () => {
         var res = null;
 
-        // alert("1");
         if (product_id && product_id !== "") {
-            // alert("2");
             console.log("product_id là: ", product_id);
 
             res = await axios.post("/api/search-product-detail", {
@@ -70,35 +69,29 @@ function ProductDetail(props) {
     };
 
     const updateProduct = (item) => {
-        // alert("alo");
-
         setPrice(item.OptionPrice);
         setOptionID(item.OptionID);
     };
 
     const countIncrease = (item) => {
-        // alert("alo");
-
         setCount(count + 1);
     };
 
     const countDecrease = (item) => {
-        if (count === 0) return alert("Can't decrease");
+        if (count === 0) return Alert({ warning: "Can't decrease" });
 
         setCount(count - 1);
     };
 
     const addCart = () => {
-        alert("hello");
-
         if (price <= 0 || count <= 0 || optionID <= 0)
-            return alert("Can't add to cart");
+            return Alert({ warning: "Can't add to cart" });
 
         saveCart();
     };
 
     const saveCart = () => {
-        alert("save thành công");
+        Alert({ message: "save thành công" });
 
         console.log("formData: ", formData);
         console.log("cart", cart);
@@ -197,20 +190,3 @@ function ProductDetail(props) {
 }
 
 export default ProductDetail;
-
-// const saveCart = () => {
-//     alert("abc");
-//     var newCart = [];
-//     console.log("formData: ", formData);
-//     console.log("cart", cart);
-
-//     if (!cart || cart.length < 1) {
-//         alert("xynz");
-
-//         newCart.push({a:formData});
-//         console.log("a", newCart);
-
-//         localStorage.setItem("cart", JSON.stringify(newCart));
-//     }
-//     // console.log();
-// };

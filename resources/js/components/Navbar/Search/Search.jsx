@@ -9,8 +9,6 @@ function Search(props) {
     const search = async (e) => {
         await e.preventDefault();
 
-        alert("đợi tí");
-
         //input
 
         if (!checkRequest()) return;
@@ -22,12 +20,12 @@ function Search(props) {
         //res
 
         console.log("name: " + name);
-        window.location.href=`/?name=${name}`;
+        window.location.href = `/?name=${name}`;
     };
 
     const checkRequest = () => {
-
-        if (!name || name.length < 1) return alert("Your text is not valid");
+        if (!name || name.length < 1)
+            return Alert({ warning: "Your text is not valid" });
 
         return true;
     };

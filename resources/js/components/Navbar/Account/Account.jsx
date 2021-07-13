@@ -25,9 +25,10 @@ function Account(props) {
     const updateAccountUI = () => {
         if (!account)
             return setTimeout(() => {
-                Alert(
-                    "Vui lòng đăng nhập để nhận ưu đãi khi săn sale Tiki 7/7 nhé !"
-                );
+                Alert({
+                    message:
+                        "Vui lòng đăng nhập để nhận ưu đãi khi săn sale Tiki 7/7 nhé !",
+                });
             }, 2000);
 
         if (account.AccountPictureURL !== "")

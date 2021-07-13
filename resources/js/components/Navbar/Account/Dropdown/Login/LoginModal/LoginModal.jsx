@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Button, Form, Modal } from "react-bootstrap";
 
 import "./LoginModal.css";
+import Alert from "./../../../../../../features/Alert";
 
 function LoginModal(props) {
     const { show, handleClose } = props;
@@ -15,8 +16,6 @@ function LoginModal(props) {
     };
 
     const login = async () => {
-        alert("đợi tí");
-
         //input
 
         if (!checkRequest()) return;
@@ -29,7 +28,7 @@ function LoginModal(props) {
 
         const { data } = await res;
 
-        alert("Notification : " + data.message);
+        Alert({ message: data.message });
 
         console.log("php: ", data);
 
@@ -52,10 +51,11 @@ function LoginModal(props) {
     const checkRequest = () => {
         console.log(formData);
 
-        if (!email || email.length < 5) return alert("Email not valid");
+        if (!email || email.length < 5)
+            return Alert({ waring: "Email not valid" });
 
         if (!password || password.length < 5)
-            return alert("Password not valid");
+            return Alert({ warning: "Password not valid" });
 
         return true;
     };

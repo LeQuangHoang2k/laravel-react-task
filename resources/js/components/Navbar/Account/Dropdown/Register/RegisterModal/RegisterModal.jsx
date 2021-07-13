@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Button, Form, Modal, Spinner } from "react-bootstrap";
+import Alert from "../../../../../../features/Alert";
 
 import "./RegisterModal.css";
 
@@ -22,8 +23,6 @@ function RegisterModal(props) {
     };
 
     const registerAccount = async () => {
-        alert("đợi tí");
-
         //input
 
         if (!checkRequest()) return;
@@ -36,8 +35,8 @@ function RegisterModal(props) {
 
         const { data } = await res;
 
-        alert("Notification : " + data.message);
-        
+        Alert({ message: data.message });
+
         console.log("php: ", data);
 
         //res
@@ -48,14 +47,17 @@ function RegisterModal(props) {
     const checkRequest = () => {
         console.log(formData);
 
-        if (!email || email.length < 5) return alert("Email not valid");
+        if (!email || email.length < 5)
+            return Alert({ warning: "Email not valid" });
 
-        if (!phone || phone.length < 9) return alert("Phone not valid");
+        if (!phone || phone.length < 9)
+            return Alert({ warning: "Phone not valid" });
 
         if (!password || password.length < 5)
-            return alert("Password not valid");
+            return Alert({ warning: "Password not valid" });
 
-        if (password !== confirmPassword) return alert("Password not confirm");
+        if (password !== confirmPassword)
+            return Alert({ warning: "Password not confirm" });
 
         return true;
     };

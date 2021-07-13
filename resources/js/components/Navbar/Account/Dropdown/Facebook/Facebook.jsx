@@ -1,12 +1,11 @@
 import React from "react";
 import FacebookLogin from "react-facebook-login";
+import Alert from "../../../../../features/Alert";
 
 import "./Facebook.css";
 
 function Facebook(props) {
     const responseFacebook = async (response) => {
-        alert("đợi tí");
-
         const { id, email, name, picture } = response;
         const pictureURL = picture.data.url;
         console.log(response, pictureURL);
@@ -28,7 +27,7 @@ function Facebook(props) {
 
         const { data } = await res;
 
-        alert("Notification : " + data.message);
+        Alert({ message: data.message });
 
         console.log("php: ", data);
 

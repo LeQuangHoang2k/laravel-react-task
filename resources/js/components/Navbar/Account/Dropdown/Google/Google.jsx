@@ -1,5 +1,6 @@
 import React from "react";
 import { GoogleLogin } from "react-google-login";
+import Alert from "../../../../../features/Alert";
 
 import "./Google.css";
 
@@ -25,7 +26,7 @@ function Google(props) {
 
         const { data } = await res;
 
-        alert("Notification : " + data.message);
+        Alert({ message: data.message });
 
         console.log("php: ", data);
 
