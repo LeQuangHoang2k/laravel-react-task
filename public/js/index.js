@@ -8205,35 +8205,40 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 function ProductDetail(props) {
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)([]),
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(0),
       _useState2 = _slicedToArray(_useState, 2),
-      product = _useState2[0],
-      setProduct = _useState2[1];
+      activeID = _useState2[0],
+      setActiveID = _useState2[1];
 
   var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)([]),
       _useState4 = _slicedToArray(_useState3, 2),
-      options = _useState4[0],
-      setOptions = _useState4[1];
+      product = _useState4[0],
+      setProduct = _useState4[1];
 
-  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(JSON.parse(localStorage.getItem("cart")) || []),
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)([]),
       _useState6 = _slicedToArray(_useState5, 2),
-      cart = _useState6[0],
-      setCart = _useState6[1];
+      options = _useState6[0],
+      setOptions = _useState6[1];
 
-  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(0),
+  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(JSON.parse(localStorage.getItem("cart")) || []),
       _useState8 = _slicedToArray(_useState7, 2),
-      optionID = _useState8[0],
-      setOptionID = _useState8[1];
+      cart = _useState8[0],
+      setCart = _useState8[1];
 
   var _useState9 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(0),
       _useState10 = _slicedToArray(_useState9, 2),
-      price = _useState10[0],
-      setPrice = _useState10[1];
+      optionID = _useState10[0],
+      setOptionID = _useState10[1];
 
   var _useState11 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(0),
       _useState12 = _slicedToArray(_useState11, 2),
-      count = _useState12[0],
-      setCount = _useState12[1];
+      price = _useState12[0],
+      setPrice = _useState12[1];
+
+  var _useState13 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(0),
+      _useState14 = _slicedToArray(_useState13, 2),
+      count = _useState14[0],
+      setCount = _useState14[1];
 
   var _queryString$parse = query_string__WEBPACK_IMPORTED_MODULE_2__.parse(window.location.search),
       product_id = _queryString$parse.product_id;
@@ -8303,10 +8308,11 @@ function ProductDetail(props) {
               console.log(data);
               setProduct(data.product);
               setOptions(data.option);
+              setActiveID(data.option[0].OptionID);
               setPrice(data.product.PriceDefault);
               setOptionID(data.option[0].OptionID);
 
-            case 21:
+            case 22:
             case "end":
               return _context.stop();
           }
@@ -8322,6 +8328,7 @@ function ProductDetail(props) {
   var updateProduct = function updateProduct(item) {
     setPrice(item.OptionPrice);
     setOptionID(item.OptionID);
+    setActiveID(item.OptionID);
   };
 
   var countIncrease = function countIncrease(item) {
@@ -8382,10 +8389,11 @@ function ProductDetail(props) {
         })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
         className: "productDetail_right_ram",
+        id: "option_wrapper ",
         children: options.map(function (item) {
           return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("button", {
             type: "button",
-            className: "option_ram",
+            className: activeID === item.OptionID ? "option_ram active" : "option_ram",
             onClick: function onClick() {
               return updateProduct(item);
             },
@@ -14577,7 +14585,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".productDetail_left {\r\n    width: 500px;\r\n    height: 500px;\r\n    background-color: white;\r\n    box-shadow: 2px 0 2px -2px silver;\r\n\r\n    position: relative;\r\n    z-index: 5px;\r\n\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n\r\n    float: left;\r\n}\r\n/* ///////////////////////////////// */\r\n.productDetail_right {\r\n    width: 750px;\r\n    height: 500px;\r\n    background-color: white;\r\n\r\n    float: right;\r\n}\r\n\r\n.productDetail_right_title {\r\n    width: 615px;\r\n    height: 35px;\r\n\r\n    margin-top: 30px;\r\n    margin-left: 20px;\r\n\r\n    font-size: 24px;\r\n}\r\n\r\n.productDetail_right_price {\r\n    width: 615px;\r\n    height: 40px;\r\n    /* background-color: red; */\r\n\r\n    position: relative;\r\n    margin-top: 15px;\r\n    margin-left: 20px;\r\n\r\n    font-size: 32px;\r\n    font-weight: bold;\r\n}\r\n\r\n/* ///////////////////////////////////////////////////// */\r\n\r\n.productDetail_right_color {\r\n    width: 500px;\r\n    height: 70px;\r\n\r\n    margin-top: 15px;\r\n    margin-left: 20px;\r\n\r\n    /* font-size: 32px;\r\n    font-weight: bold; */\r\n}\r\n\r\n.option_color {\r\n    width: 150px;\r\n    height: 70px;\r\n    background-color: rgb(242, 242, 242);\r\n    border-radius: 10px;\r\n\r\n    position: relative;\r\n    margin-top: 20px;\r\n    margin-right: 20px;\r\n    float: left;\r\n\r\n    display: flex;\r\n    align-items: center;\r\n\r\n    cursor: pointer;\r\n}\r\n\r\n.option_color:active {\r\n    background-color: rgb(1, 127, 255);\r\n}\r\n\r\n.option_picture {\r\n    width: 66px;\r\n    height: 66px;\r\n\r\n    margin-left: 3px;\r\n    margin-right: 5px;\r\n}\r\n\r\n.option_text {\r\n    font-weight: bold;\r\n}\r\n\r\n/* ///////////////////////////////////////////////////// */\r\n\r\n.productDetail_right_ram {\r\n    width: 500px; /* 85px */\r\n    height: 40px;\r\n    /* background-color: red; */\r\n\r\n    position: relative;\r\n    margin-top: 40px;\r\n    margin-left: 20px;\r\n}\r\n\r\n.option_ram {\r\n    width: 85px;\r\n    height: 40px;\r\n    background-color: rgb(242, 242, 242);\r\n    border: none;\r\n    border-radius: 5px;\r\n\r\n    position: relative;\r\n    margin-right: 15px;\r\n    \r\n    font-weight: bold;\r\n}\r\n\r\n.option_ram:active {\r\n    background-color: rgb(1, 127, 255);\r\n\r\n    color: white;\r\n}\r\n\r\n/* ///////////////////////////////////////////////////// */\r\n\r\n.option_amount {\r\n    width: 100px;\r\n    height: 30px;\r\n\r\n    position: relative;\r\n    margin-top: 40px;\r\n    margin-left: 20px;\r\n}\r\n\r\n.option_count,\r\n.option_increase,\r\n.option_decrease {\r\n    width: 30px;\r\n    height: 30px;\r\n    background-color: white;\r\n    border: 1px solid silver;\r\n\r\n    font-weight: bold;\r\n    color: gray;\r\n}\r\n\r\n.option_count:active,\r\n.option_increase:active,\r\n.option_decrease:active {\r\n    box-shadow: 0 0 2px 2px rgb(1, 127, 255);\r\n}\r\n\r\n/* ///////////////////////////////////////////////////// */\r\n\r\n.option_final {\r\n    width: 240px;\r\n    height: 50px;\r\n    background-color: #ff3945;\r\n    border: none;\r\n    border-radius: 5px;\r\n\r\n    position: relative;\r\n    margin-top: 60px;\r\n    margin-left: 20px;\r\n\r\n    color: white;\r\n    font-weight: bold;\r\n}\r\n\r\n/* .productDetail_wrapper {\r\n    width: 250px;\r\n    height: 330px;\r\n    background-color: white;\r\n    /* \r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n\r\n    position: relative;\r\n    padding: 12px 16px;\r\n    float: left; \r\n} */\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".productDetail_left {\r\n    width: 500px;\r\n    height: 500px;\r\n    background-color: white;\r\n    box-shadow: 2px 0 2px -2px silver;\r\n\r\n    position: relative;\r\n    z-index: 5px;\r\n\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n\r\n    float: left;\r\n}\r\n/* ///////////////////////////////// */\r\n.productDetail_right {\r\n    width: 750px;\r\n    height: 500px;\r\n    background-color: white;\r\n\r\n    float: right;\r\n}\r\n\r\n.productDetail_right_title {\r\n    width: 615px;\r\n    height: 35px;\r\n\r\n    margin-top: 30px;\r\n    margin-left: 20px;\r\n\r\n    font-size: 24px;\r\n}\r\n\r\n.productDetail_right_price {\r\n    width: 615px;\r\n    height: 40px;\r\n    /* background-color: red; */\r\n\r\n    position: relative;\r\n    margin-top: 15px;\r\n    margin-left: 20px;\r\n\r\n    font-size: 32px;\r\n    font-weight: bold;\r\n}\r\n\r\n/* ///////////////////////////////////////////////////// */\r\n\r\n.productDetail_right_color {\r\n    width: 500px;\r\n    height: 70px;\r\n\r\n    margin-top: 15px;\r\n    margin-left: 20px;\r\n\r\n    /* font-size: 32px;\r\n    font-weight: bold; */\r\n}\r\n\r\n.option_color {\r\n    width: 150px;\r\n    height: 70px;\r\n    background-color: rgb(242, 242, 242);\r\n    border-radius: 10px;\r\n\r\n    position: relative;\r\n    margin-top: 20px;\r\n    margin-right: 20px;\r\n    float: left;\r\n\r\n    display: flex;\r\n    align-items: center;\r\n\r\n    cursor: pointer;\r\n}\r\n\r\n.option_color:active {\r\n    background-color: rgb(1, 127, 255);\r\n}\r\n\r\n.option_picture {\r\n    width: 66px;\r\n    height: 66px;\r\n\r\n    margin-left: 3px;\r\n    margin-right: 5px;\r\n}\r\n\r\n.option_text {\r\n    font-weight: bold;\r\n}\r\n\r\n/* ///////////////////////////////////////////////////// */\r\n\r\n.productDetail_right_ram {\r\n    width: 500px; /* 85px */\r\n    height: 40px;\r\n    /* background-color: red; */\r\n\r\n    position: relative;\r\n    margin-top: 40px;\r\n    margin-left: 20px;\r\n}\r\n\r\n.option_ram {\r\n    width: 85px;\r\n    height: 40px;\r\n    background-color: rgb(242, 242, 242);\r\n    border: none;\r\n    border-radius: 5px;\r\n\r\n    position: relative;\r\n    margin-right: 15px;\r\n\r\n    font-weight: bold;\r\n}\r\n\r\n/* .option_ram:first-child {\r\n    background-color: rgb(1, 127, 255);\r\n\r\n    color: white;\r\n} */\r\n\r\n.option_ram.active {\r\n    background-color: rgb(1, 127, 255);\r\n\r\n    color: white;\r\n}\r\n\r\n/* ///////////////////////////////////////////////////// */\r\n\r\n.option_amount {\r\n    width: 100px;\r\n    height: 30px;\r\n\r\n    position: relative;\r\n    margin-top: 40px;\r\n    margin-left: 20px;\r\n}\r\n\r\n.option_count,\r\n.option_increase,\r\n.option_decrease {\r\n    width: 30px;\r\n    height: 30px;\r\n    background-color: white;\r\n    border: 1px solid silver;\r\n\r\n    font-weight: bold;\r\n    color: gray;\r\n}\r\n\r\n.option_count:active,\r\n.option_increase:active,\r\n.option_decrease:active {\r\n    box-shadow: 0 0 2px 2px rgb(1, 127, 255);\r\n}\r\n\r\n/* ///////////////////////////////////////////////////// */\r\n\r\n.option_final {\r\n    width: 240px;\r\n    height: 50px;\r\n    background-color: #ff3945;\r\n    border: none;\r\n    border-radius: 5px;\r\n\r\n    position: relative;\r\n    margin-top: 60px;\r\n    margin-left: 20px;\r\n\r\n    color: white;\r\n    font-weight: bold;\r\n}\r\n\r\n/* .productDetail_wrapper {\r\n    width: 250px;\r\n    height: 330px;\r\n    background-color: white;\r\n    /* \r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n\r\n    position: relative;\r\n    padding: 12px 16px;\r\n    float: left; \r\n} */\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

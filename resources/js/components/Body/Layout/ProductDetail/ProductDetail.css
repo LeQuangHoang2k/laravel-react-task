@@ -112,11 +112,17 @@
 
     position: relative;
     margin-right: 15px;
-    
+
     font-weight: bold;
 }
 
-.option_ram:active {
+/* .option_ram:first-child {
+    background-color: rgb(1, 127, 255);
+
+    color: white;
+} */
+
+.option_ram.active {
     background-color: rgb(1, 127, 255);
 
     color: white;

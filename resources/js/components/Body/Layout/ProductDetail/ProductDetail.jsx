@@ -5,6 +5,7 @@ import "./ProductDetail.css";
 import Alert from "../../../../features/Alert";
 
 function ProductDetail(props) {
+    const [activeID, setActiveID] = useState(0);
     const [product, setProduct] = useState([]);
     const [options, setOptions] = useState([]);
     const [cart, setCart] = useState(
@@ -64,6 +65,7 @@ function ProductDetail(props) {
 
         setProduct(data.product);
         setOptions(data.option);
+        setActiveID(data.option[0].OptionID);
 
         setPrice(data.product.PriceDefault);
         setOptionID(data.option[0].OptionID);
@@ -72,6 +74,7 @@ function ProductDetail(props) {
     const updateProduct = (item) => {
         setPrice(item.OptionPrice);
         setOptionID(item.OptionID);
+        setActiveID(item.OptionID);
     };
 
     const countIncrease = (item) => {
@@ -155,13 +158,17 @@ function ProductDetail(props) {
                     </div>
                 </div> */}
 
-                <div className="productDetail_right_ram">
+                <div className="productDetail_right_ram" id="option_wrapper ">
                     {options.map((item) => {
                         return (
                             <button
                                 key={item.OptionID}
                                 type="button"
-                                className="option_ram"
+                                className={
+                                    activeID === item.OptionID
+                                        ? "option_ram active"
+                                        : "option_ram"
+                                }
                                 onClick={() => updateProduct(item)}
                             >
                                 {item.OptionValue}
