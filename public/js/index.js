@@ -8304,8 +8304,9 @@ function ProductDetail(props) {
               setProduct(data.product);
               setOptions(data.option);
               setPrice(data.product.PriceDefault);
+              setOptionID(data.option[0].OptionID);
 
-            case 20:
+            case 21:
             case "end":
               return _context.stop();
           }
@@ -8335,8 +8336,14 @@ function ProductDetail(props) {
   };
 
   var addCart = function addCart() {
-    if (price <= 0 || count <= 0 || optionID <= 0) return (0,_features_Alert__WEBPACK_IMPORTED_MODULE_4__.default)({
-      warning: "Can't add to cart"
+    if (price <= 0) return (0,_features_Alert__WEBPACK_IMPORTED_MODULE_4__.default)({
+      warning: "Can't add to cart because price isn't valid."
+    });
+    if (count <= 0) return (0,_features_Alert__WEBPACK_IMPORTED_MODULE_4__.default)({
+      warning: "Can't add to cart because count isn't valid."
+    });
+    if (optionID <= 0) return (0,_features_Alert__WEBPACK_IMPORTED_MODULE_4__.default)({
+      warning: "Can't add to cart because option name isn't valid."
     });
     saveCart();
   };
@@ -8348,7 +8355,7 @@ function ProductDetail(props) {
     console.log("formData: ", formData);
     console.log("cart", cart);
     cart.push({
-      a: formData
+      product: formData
     });
     localStorage.setItem("cart", JSON.stringify(cart));
     console.log("cart", cart);

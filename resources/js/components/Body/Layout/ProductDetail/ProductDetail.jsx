@@ -66,6 +66,7 @@ function ProductDetail(props) {
         setOptions(data.option);
 
         setPrice(data.product.PriceDefault);
+        setOptionID(data.option[0].OptionID);
     };
 
     const updateProduct = (item) => {
@@ -84,8 +85,20 @@ function ProductDetail(props) {
     };
 
     const addCart = () => {
-        if (price <= 0 || count <= 0 || optionID <= 0)
-            return Alert({ warning: "Can't add to cart" });
+        if (price <= 0)
+            return Alert({
+                warning: "Can't add to cart because price isn't valid.",
+            });
+
+        if (count <= 0)
+            return Alert({
+                warning: "Can't add to cart because count isn't valid.",
+            });
+
+        if (optionID <= 0)
+            return Alert({
+                warning: "Can't add to cart because option name isn't valid.",
+            });
 
         saveCart();
     };
@@ -96,7 +109,7 @@ function ProductDetail(props) {
         console.log("formData: ", formData);
         console.log("cart", cart);
 
-        cart.push({ a: formData });
+        cart.push({ product: formData });
         localStorage.setItem("cart", JSON.stringify(cart));
 
         console.log("cart", cart);
