@@ -8259,6 +8259,7 @@ function ProductDetail(props) {
       setPrice(0);
       setCount(1);
       setOptionID(0);
+      setActiveID(0);
       formData = {};
     };
   }, []);
