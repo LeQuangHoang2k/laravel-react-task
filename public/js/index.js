@@ -8235,7 +8235,7 @@ function ProductDetail(props) {
       price = _useState12[0],
       setPrice = _useState12[1];
 
-  var _useState13 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(0),
+  var _useState13 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(1),
       _useState14 = _slicedToArray(_useState13, 2),
       count = _useState14[0],
       setCount = _useState14[1];
@@ -8257,7 +8257,7 @@ function ProductDetail(props) {
       setOptions([]);
       setCart([]);
       setPrice(0);
-      setCount(0);
+      setCount(1);
       setOptionID(0);
       formData = {};
     };
@@ -8336,8 +8336,8 @@ function ProductDetail(props) {
   };
 
   var countDecrease = function countDecrease(item) {
-    if (count === 0) return (0,_features_Alert__WEBPACK_IMPORTED_MODULE_4__.default)({
-      warning: "Can't decrease"
+    if (count === 1) return (0,_features_Alert__WEBPACK_IMPORTED_MODULE_4__.default)({
+      warning: "Can't reduce any more"
     });
     setCount(count - 1);
   };
@@ -8366,6 +8366,7 @@ function ProductDetail(props) {
     });
     localStorage.setItem("cart", JSON.stringify(cart));
     console.log("cart", cart);
+    setCount(1);
   };
 
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
@@ -8373,7 +8374,7 @@ function ProductDetail(props) {
       className: "productDetail_left",
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("img", {
         src: "https://salt.tikicdn.com/cache/w444/ts/product/27/55/4e/de17f04656c5cbfd86eb49dbbfb3fe3a.jpg",
-        className: "img-responsive",
+        className: "productDetail_left_image",
         alt: "Image"
       })
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
@@ -8387,6 +8388,29 @@ function ProductDetail(props) {
           style: "currency",
           currency: "VND"
         })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+        className: "productDetail_right_color",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+          className: "option_color",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("img", {
+            src: "https://salt.tikicdn.com/cache/w444/ts/product/86/dd/0c/8948ec0e37381d80d7daf5f8c24062ed.jpg",
+            className: "option_picture",
+            alt: "Image"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
+            className: "option_text",
+            children: "Black"
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+          className: "option_color",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("img", {
+            src: "https://salt.tikicdn.com/cache/w444/ts/product/27/55/4e/de17f04656c5cbfd86eb49dbbfb3fe3a.jpg",
+            className: "option_picture",
+            alt: "Image"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
+            className: "option_text",
+            children: "Silver"
+          })]
+        })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
         className: "productDetail_right_ram",
         id: "option_wrapper ",
@@ -8400,11 +8424,12 @@ function ProductDetail(props) {
             children: item.OptionValue
           }, item.OptionID);
         })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("p", {
+        className: "option_amount_title",
+        children: "Amount:"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
         className: "option_amount",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("p", {
-          children: "Amount:"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("button", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("button", {
           type: "button",
           className: "option_decrease",
           onClick: countDecrease,
@@ -8420,9 +8445,15 @@ function ProductDetail(props) {
         })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("button", {
         type: "button",
-        className: "option_final",
+        className: "option_choose",
         onClick: addCart,
         children: "Add to Cart"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+        className: "productDetail_description",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
+          className: "productDetail_text",
+          children: product.ProductDescription
+        })
       })]
     })]
   });
@@ -14585,7 +14616,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".productDetail_left {\r\n    width: 500px;\r\n    height: 500px;\r\n    background-color: white;\r\n    box-shadow: 2px 0 2px -2px silver;\r\n\r\n    position: relative;\r\n    z-index: 5px;\r\n\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n\r\n    float: left;\r\n}\r\n/* ///////////////////////////////// */\r\n.productDetail_right {\r\n    width: 750px;\r\n    height: 500px;\r\n    background-color: white;\r\n\r\n    float: right;\r\n}\r\n\r\n.productDetail_right_title {\r\n    width: 615px;\r\n    height: 35px;\r\n\r\n    margin-top: 30px;\r\n    margin-left: 20px;\r\n\r\n    font-size: 24px;\r\n}\r\n\r\n.productDetail_right_price {\r\n    width: 615px;\r\n    height: 40px;\r\n    /* background-color: red; */\r\n\r\n    position: relative;\r\n    margin-top: 15px;\r\n    margin-left: 20px;\r\n\r\n    font-size: 32px;\r\n    font-weight: bold;\r\n}\r\n\r\n/* ///////////////////////////////////////////////////// */\r\n\r\n.productDetail_right_color {\r\n    width: 500px;\r\n    height: 70px;\r\n\r\n    margin-top: 15px;\r\n    margin-left: 20px;\r\n\r\n    /* font-size: 32px;\r\n    font-weight: bold; */\r\n}\r\n\r\n.option_color {\r\n    width: 150px;\r\n    height: 70px;\r\n    background-color: rgb(242, 242, 242);\r\n    border-radius: 10px;\r\n\r\n    position: relative;\r\n    margin-top: 20px;\r\n    margin-right: 20px;\r\n    float: left;\r\n\r\n    display: flex;\r\n    align-items: center;\r\n\r\n    cursor: pointer;\r\n}\r\n\r\n.option_color:active {\r\n    background-color: rgb(1, 127, 255);\r\n}\r\n\r\n.option_picture {\r\n    width: 66px;\r\n    height: 66px;\r\n\r\n    margin-left: 3px;\r\n    margin-right: 5px;\r\n}\r\n\r\n.option_text {\r\n    font-weight: bold;\r\n}\r\n\r\n/* ///////////////////////////////////////////////////// */\r\n\r\n.productDetail_right_ram {\r\n    width: 500px; /* 85px */\r\n    height: 40px;\r\n    /* background-color: red; */\r\n\r\n    position: relative;\r\n    margin-top: 40px;\r\n    margin-left: 20px;\r\n}\r\n\r\n.option_ram {\r\n    width: 85px;\r\n    height: 40px;\r\n    background-color: rgb(242, 242, 242);\r\n    border: none;\r\n    border-radius: 5px;\r\n\r\n    position: relative;\r\n    margin-right: 15px;\r\n\r\n    font-weight: bold;\r\n}\r\n\r\n/* .option_ram:first-child {\r\n    background-color: rgb(1, 127, 255);\r\n\r\n    color: white;\r\n} */\r\n\r\n.option_ram.active {\r\n    background-color: rgb(1, 127, 255);\r\n\r\n    color: white;\r\n}\r\n\r\n/* ///////////////////////////////////////////////////// */\r\n\r\n.option_amount {\r\n    width: 100px;\r\n    height: 30px;\r\n\r\n    position: relative;\r\n    margin-top: 40px;\r\n    margin-left: 20px;\r\n}\r\n\r\n.option_count,\r\n.option_increase,\r\n.option_decrease {\r\n    width: 30px;\r\n    height: 30px;\r\n    background-color: white;\r\n    border: 1px solid silver;\r\n\r\n    font-weight: bold;\r\n    color: gray;\r\n}\r\n\r\n.option_count:active,\r\n.option_increase:active,\r\n.option_decrease:active {\r\n    box-shadow: 0 0 2px 2px rgb(1, 127, 255);\r\n}\r\n\r\n/* ///////////////////////////////////////////////////// */\r\n\r\n.option_final {\r\n    width: 240px;\r\n    height: 50px;\r\n    background-color: #ff3945;\r\n    border: none;\r\n    border-radius: 5px;\r\n\r\n    position: relative;\r\n    margin-top: 60px;\r\n    margin-left: 20px;\r\n\r\n    color: white;\r\n    font-weight: bold;\r\n}\r\n\r\n/* .productDetail_wrapper {\r\n    width: 250px;\r\n    height: 330px;\r\n    background-color: white;\r\n    /* \r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n\r\n    position: relative;\r\n    padding: 12px 16px;\r\n    float: left; \r\n} */\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".productDetail_left {\r\n    width: 500px;\r\n    height: 700px;\r\n    background-color: white;\r\n    box-shadow: 2px 0 2px -2px silver;\r\n\r\n    position: relative;\r\n    z-index: 5px;\r\n\r\n    display: flex;\r\n    justify-content: center;\r\n    /* align-items: center; */\r\n\r\n    float: left;\r\n}\r\n\r\n.productDetail_left_image {\r\n    width: 444px;\r\n    height: 444px;\r\n\r\n    margin-top: 30px;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\r\n}\r\n\r\n/* ///////////////////////////////// */\r\n.productDetail_right {\r\n    width: 750px;\r\n    height: 700px;\r\n    background-color: white;\r\n\r\n    float: right;\r\n}\r\n\r\n.productDetail_right_title {\r\n    width: 615px;\r\n    height: 35px;\r\n\r\n    margin-top: 30px;\r\n    margin-left: 20px;\r\n\r\n    font-size: 24px;\r\n}\r\n\r\n.productDetail_right_price {\r\n    width: 615px;\r\n    height: 40px;\r\n    /* background-color: red; */\r\n\r\n    position: relative;\r\n    margin-top: 15px;\r\n    margin-left: 20px;\r\n\r\n    font-size: 32px;\r\n    font-weight: bold;\r\n}\r\n\r\n/* ///////////////////////////////////////////////////// */\r\n\r\n.productDetail_right_color {\r\n    width: 500px;\r\n    height: 70px;\r\n\r\n    margin-top: 15px;\r\n    margin-left: 20px;\r\n\r\n    /* font-size: 32px;\r\n    font-weight: bold; */\r\n}\r\n\r\n.option_color {\r\n    width: 150px;\r\n    height: 70px;\r\n    background-color: rgb(242, 242, 242);\r\n    border-radius: 10px;\r\n\r\n    position: relative;\r\n    margin-top: 20px;\r\n    margin-right: 20px;\r\n    float: left;\r\n\r\n    display: flex;\r\n    align-items: center;\r\n\r\n    cursor: pointer;\r\n}\r\n\r\n.option_color:active {\r\n    background-color: rgb(1, 127, 255);\r\n}\r\n\r\n.option_picture {\r\n    width: 66px;\r\n    height: 66px;\r\n\r\n    margin-left: 3px;\r\n    margin-right: 5px;\r\n}\r\n\r\n.option_text {\r\n    font-weight: bold;\r\n}\r\n\r\n/* ///////////////////////////////////////////////////// */\r\n\r\n.productDetail_right_ram {\r\n    width: 500px; /* 85px */\r\n    height: 40px;\r\n    /* background-color: red; */\r\n\r\n    position: relative;\r\n    margin-top: 40px;\r\n    margin-left: 20px;\r\n}\r\n\r\n.option_ram {\r\n    width: 85px;\r\n    height: 40px;\r\n    background-color: rgb(242, 242, 242);\r\n    border: none;\r\n    border-radius: 5px;\r\n\r\n    position: relative;\r\n    margin-right: 15px;\r\n\r\n    font-weight: bold;\r\n}\r\n\r\n/* .option_ram:first-child {\r\n    background-color: rgb(1, 127, 255);\r\n\r\n    color: white;\r\n} */\r\n\r\n.option_ram.active {\r\n    background-color: rgb(1, 127, 255);\r\n\r\n    color: white;\r\n}\r\n\r\n/* ///////////////////////////////////////////////////// */\r\n.option_amount_title {\r\n    padding-top: 10px;\r\n    padding-left: 20px;\r\n}\r\n\r\n.option_amount {\r\n    width: 100px;\r\n    height: 30px;\r\n\r\n    position: relative;\r\n    margin-top: 5px;\r\n    margin-left: 20px;\r\n}\r\n\r\n.option_count,\r\n.option_increase,\r\n.option_decrease {\r\n    width: 30px;\r\n    height: 30px;\r\n    background-color: white;\r\n    border: 1px solid silver;\r\n\r\n    font-weight: bold;\r\n    color: gray;\r\n}\r\n\r\n.option_count:active,\r\n.option_increase:active,\r\n.option_decrease:active {\r\n    box-shadow: 0 0 2px 2px rgb(1, 127, 255);\r\n}\r\n\r\n/* ///////////////////////////////////////////////////// */\r\n\r\n.option_choose {\r\n    width: 240px;\r\n    height: 50px;\r\n    background-color: #ff3945;\r\n    border: none;\r\n    border-radius: 5px;\r\n\r\n    position: relative;\r\n    margin-top: 15px;\r\n    margin-left: 20px;\r\n\r\n    color: white;\r\n    font-weight: bold;\r\n}\r\n\r\n.productDetail_description {\r\n    width: 100%;\r\n    height: 270px;\r\n    /* background-color: gray; */\r\n\r\n    padding-top: 10px;\r\n    padding-left: 20px;\r\n}\r\n\r\n.productDetail_text {\r\n    white-space: nowrap;\r\n    display: inline-block;\r\n    overflow: hidden;\r\n    text-overflow: ellipsis;\r\n\r\n    color: black;\r\n\r\n    -webkit-line-clamp: 11;\r\n    display: -webkit-box;\r\n    -webkit-box-orient: vertical;\r\n    white-space: normal;\r\n}\r\n\r\n/* .productDetail_wrapper {\r\n    width: 250px;\r\n    height: 330px;\r\n    background-color: white;\r\n    /* \r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n\r\n    position: relative;\r\n    padding: 12px 16px;\r\n    float: left; \r\n} */\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

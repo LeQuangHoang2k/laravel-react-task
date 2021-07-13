@@ -14,7 +14,7 @@ function ProductDetail(props) {
 
     const [optionID, setOptionID] = useState(0);
     const [price, setPrice] = useState(0);
-    const [count, setCount] = useState(0);
+    const [count, setCount] = useState(1);
 
     const { product_id } = queryString.parse(window.location.search);
 
@@ -36,7 +36,7 @@ function ProductDetail(props) {
             setCart([]);
 
             setPrice(0);
-            setCount(0);
+            setCount(1);
             setOptionID(0);
 
             formData = {};
@@ -82,7 +82,7 @@ function ProductDetail(props) {
     };
 
     const countDecrease = (item) => {
-        if (count === 0) return Alert({ warning: "Can't decrease" });
+        if (count === 1) return Alert({ warning: "Can't reduce any more" });
 
         setCount(count - 1);
     };
@@ -116,6 +116,8 @@ function ProductDetail(props) {
         localStorage.setItem("cart", JSON.stringify(cart));
 
         console.log("cart", cart);
+
+        setCount(1);
     };
 
     return (
@@ -123,7 +125,7 @@ function ProductDetail(props) {
             <div className="productDetail_left">
                 <img
                     src="https://salt.tikicdn.com/cache/w444/ts/product/27/55/4e/de17f04656c5cbfd86eb49dbbfb3fe3a.jpg"
-                    className="img-responsive"
+                    className="productDetail_left_image"
                     alt="Image"
                 />
             </div>
@@ -139,7 +141,7 @@ function ProductDetail(props) {
                     })}
                 </div>
 
-                {/* <div className="productDetail_right_color">
+                <div className="productDetail_right_color">
                     <div className="option_color">
                         <img
                             src="https://salt.tikicdn.com/cache/w444/ts/product/86/dd/0c/8948ec0e37381d80d7daf5f8c24062ed.jpg"
@@ -156,7 +158,7 @@ function ProductDetail(props) {
                         />
                         <span className="option_text">Silver</span>
                     </div>
-                </div> */}
+                </div>
 
                 <div className="productDetail_right_ram" id="option_wrapper ">
                     {options.map((item) => {
@@ -177,9 +179,9 @@ function ProductDetail(props) {
                     })}
                 </div>
 
-                <div className="option_amount">
-                    <p>Amount:</p>
+                <p className="option_amount_title">Amount:</p>
 
+                <div className="option_amount">
                     <button
                         type="button"
                         className="option_decrease"
@@ -199,11 +201,17 @@ function ProductDetail(props) {
 
                 <button
                     type="button"
-                    className="option_final"
+                    className="option_choose"
                     onClick={addCart}
                 >
                     Add to Cart
                 </button>
+
+                <div className="productDetail_description">
+                    <span className="productDetail_text">
+                        {product.ProductDescription}
+                    </span>
+                </div>
             </div>
         </div>
     );
