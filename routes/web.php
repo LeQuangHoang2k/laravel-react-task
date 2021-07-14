@@ -32,4 +32,7 @@ Route::post('/api/show-product', [ProductController::class, 'show']);
 Route::post('/api/search-product', [ProductController::class, 'search']);
 Route::post('/api/search-product-detail', [ProductDetailController::class, 'searchByID']);
 
+Route::get('/api/products', []);
+Route::get('/api/products/{id}', []);
+
 

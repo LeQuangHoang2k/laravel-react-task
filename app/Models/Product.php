@@ -18,4 +18,14 @@ class Product extends Model
         "PriceDefault",
         "ProductPriority"
     ];
+
+    public function options()
+    {
+        return $this->hasMany(ProductOption::class, 'ProductID');
+    }
+
+    public function imagegs()
+    {
+        return $this->hasMany(ProductOption::class, 'ProductID');
+    }
 }

@@ -7,33 +7,26 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+use ThirdParty;
 
-class FacebookController extends Controller
+class ThirdPartyController extends Controller
 {
-    public function login(Request $request){
-        //input
+    public function login(Request $request)
+    {
 
-        //check db
-        // print_r($request->email);
-        // return;
-        $checkExistAccount= $this->checkExistAccount($request);
-        
-        if($checkExistAccount === "Not exist"){
-            $this->createAccount($request);
-        }
-        
-        if($checkExistAccount === "Not active"){
-            $this->updateAccount($request);
-        }
+        // Sync account
+       $user = (new ThirdParty())->syncAccountFB();
 
+        // gen access token
+       $token = auth()->login($user);
 
-        //main - jwt token
+       return $this->respondWithToken($token);
 
-        $Account = DB::select('select AccountID,AccountEmail,AccountName,AccountPhone,AccountPictureURL,AccountRole from Account where AccountEmail = ?', [$request->email]);
+        //$Account = DB::select('select AccountID,AccountEmail,AccountName,AccountPhone,AccountPictureURL,AccountRole from Account where AccountEmail = ?', [$request->email]);
         
         //res
 
-        return response()->json(['message' => "success",'account'=>$Account[0]]);
+        //return response()->json(['message' => "success",'account'=>$Account[0]]);
     }
 
     public function checkExistAccount($request){
@@ -51,7 +44,6 @@ class FacebookController extends Controller
     }
 
     public function createAccount($request){
-
         DB::table("Account")->insert([
             "FacebookID" => $request->id,
             "AccountEmail" => $request->email,
@@ -59,7 +51,8 @@ class FacebookController extends Controller
             "AccountPictureURL" => $request->pictureURL,
             "AccountRole" => "user",
             'created_at' => Carbon::today()->toDateTimeString(),
-        ]); 
+        ]);
+         
 
     }
 

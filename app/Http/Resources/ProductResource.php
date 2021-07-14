@@ -1,0 +1,27 @@
+<?php
+
+namespace App\Http\Resources;
+
+use Carbon\Carbon;
+use Illuminate\Http\Resources\Json\JsonResource;
+
+class ProductResource extends JsonResource
+{
+    /**
+     * Transform the resource into an array.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return array
+     */
+    public function toArray($request)
+    {
+        return [
+            'id' => $this->id,
+            'name' => $this->id . '_' . $this->name,
+            'is_promontion' => $this->is_promontion ? 'SP Khuyến mĩa' : 'ko',
+            'options' => ProductOptionResource::collection($this->options),
+            'images' => ProductImageResource::collection($this->imagegs),
+            'created_at' => Carbon::parse($this->created_at)->format('d/m/Y H:i:s')
+        ];
+    }
+}
